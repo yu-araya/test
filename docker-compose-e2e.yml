@@ -1,0 +1,59 @@
+version: "3"
+
+services:
+    e2e-web:
+        container_name: e2e-web
+        build:
+            context: .
+            dockerfile: ./touchpay-web/Dockerfile
+            args:
+                docroot: /var/www/html
+                appname: TouchPay.standard
+        restart: always
+        tty: true
+        volumes:
+            - ./touchpay-web:/touchpay-web
+            - ./TouchPay.standard:/var/www/html/TouchPay.standard
+            - ./touchpay-web/database-e2e.php:/var/www/html/TouchPay.standard/app/config/database.php
+        ports:
+            - 8081:80
+        environment:
+            TZ: Asia/Tokyo
+            DEBUG_LEVEL: 2
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_USER: dining_standard
+            MYSQL_PASSWORD: dining_standard
+        depends_on:
+            - e2e-mysql
+
+    e2e-mysql:
+        container_name: e2e-mysql
+        build:
+            context: .
+            dockerfile: ./touchpay-mysql/Dockerfile
+        environment:
+            MYSQL_DATABASE: standard_tpay
+            MYSQL_USER: dining_standard
+            MYSQL_PASSWORD: dining_standard
+            MYSQL_ROOT_PASSWORD: password
+            TZ: Asia/Tokyo
+        volumes:
+            - ./touchpay-mysql/sqls/init.sql:/docker-entrypoint-initdb.d/init.sql
+        ports:
+            - 3307:3306
+
+    e2e:
+        build:
+            context: .
+            dockerfile: ./e2e/Dockerfile
+        container_name: cypress
+        environment:
+            - CYPRESS_baseUrl=http://e2e-web
+        command: "--browser chrome "
+        volumes:
+            - ./e2e/cypress:/cypress
+            - ./e2e/cypress.json:/cypress.json
+            - ./TouchPay.standard/app/webroot/menu:/TouchPay.standard/app/webroot/menu
+        depends_on:
+            - e2e-mysql
+            - e2e-web

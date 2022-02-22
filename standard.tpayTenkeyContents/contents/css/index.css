@@ -1,0 +1,96 @@
+/*
+ * 社員食堂精算管理システム
+ * index トップ（金額入力）画面
+ * キーパッド入力タイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+/* 表示 */
+p.item {
+    -webkit-background-size: 100% 100%;
+    position: absolute;
+    font-size: 24px;
+
+    text-shadow: #444 1px 1px 3px;
+}
+
+p.item#mes2 {
+    left: 40px;
+    top: 100px;
+    height: 30px;
+    text-align: left;
+    vertical-align: top;
+    visibility: hidden;
+}
+p.item#point2 {
+    left: 170px;
+    top: 40px;
+    width: 250px;
+    height: 30px;
+    text-align: right;
+    vertical-align: top;
+    visibility: hidden;
+    font-size: 4em;
+}
+p.item#mes3 {
+    left: 9px;
+    top: 170px;
+    width: 463px;
+    height: 30px;
+    text-align: center;
+    vertical-align: top;
+    visibility: hidden;
+}
+
+.info {
+    -webkit-background-size: 100% 100%;
+    position: absolute;
+    font-size: 16px;
+
+    text-shadow: #444 1px 1px 3px;
+}
+.info#senddata {
+    left: 180px;
+    top: 18px;
+    width: 150px;
+    height: 20px;
+    text-align: right;
+}
+.info#log {
+    left: 354px;
+    top: 3px;
+    width: 32px;
+    height: 32px;
+}
+.info#keypad {
+    left: 397px;
+    top: 3px;
+    width: 32px;
+    height: 32px;
+}
+.info#network {
+    left: 440px;
+    top: 3px;
+    width: 32px;
+    height: 32px;
+}
+.button#getcard {
+    position: absolute;
+    left: 370px;
+    top: 227px;
+    width: 95px;
+    height: 35px;
+    background-image: url(./image/bluebutton.png);
+    font-size: 15px;
+    color: #ffffff;
+    text-shadow: #444 1px 1px 3px;
+    text-align: center;
+    line-height: 34px;
+}

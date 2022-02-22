@@ -1,0 +1,14 @@
+FROM php:7.4-apache
+
+RUN apt-get update && apt-get install -y
+
+RUN apt-get install -y git zip unzip vim libicu-dev htop libpq-dev libonig-dev libxml2-dev
+RUN set -ex apk --no-cache add postgresql-dev libpq-dev
+RUN docker-php-ext-install mbstring pdo pdo_mysql opcache intl xml && a2enmod rewrite
+RUN service apache2 restart
+
+COPY ./touchpay-web/php.ini /usr/local/etc/php/php.ini
+COPY ./touchpay-web/httpd_conf/sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf
+# COPY ./touchpay-web/httpd_conf/apache2.conf /etc/apache2/apache2.conf
+
+WORKDIR /var/www/html

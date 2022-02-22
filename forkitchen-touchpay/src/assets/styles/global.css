@@ -1,0 +1,23 @@
+html {
+    background-color: #fbf5eb;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.scroll {
+    overflow: scroll;
+}

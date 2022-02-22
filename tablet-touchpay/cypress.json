@@ -1,0 +1,20 @@
+{
+    "pluginsFile": "tests/e2e/plugins/index.js",
+    "fixturesFolder": "tests/e2e/fixtures",
+    "integrationFolder": "tests/e2e/specs",
+    "screenshotsFolder": "tests/e2e/screenshots",
+    "videosFolder": "tests/e2e/videos",
+    "supportFile": "tests/e2e/support/index.js",
+    "viewportWidth": 1366,
+    "viewportHeight": 1024,
+    "env": {
+        "db": {
+            "host": "localhost",
+            "user": "dining_standard",
+            "password": "dining_standard",
+            "database": "standard_tpay",
+            "port": "3307"
+        }
+    },
+    "requestTimeout": 20000
+}

@@ -1,0 +1,90 @@
+/*
+ * 社員食堂精算管理システム
+ * index トップ画面
+ * 非接触ICタイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+
+/* ボタン */
+
+.button
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+/* ボタン onMouseDownで動作するもの */
+
+.button_down
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+.button_down#work		{left:7px;   top:39px;width:466px; height:227px;background-color:C6FFB2;}
+
+/* 表示 */
+#itemArea
+{
+	background-color:black;
+
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+
+	position:absolute;
+	LEFT:10px;
+	TOP:120px;
+	width:240px;
+	height:95px;
+}
+
+p.item
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-size: 24px;
+
+	text-shadow:#444 1px 1px 3px;
+}
+
+.info
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-size: 16px;
+
+	text-shadow:#444 1px 1px 3px;
+}
+
+.info#senddata	{left:180px;  top:18px;width:150px; height:20px;text-align: right;}
+.info#setting	{left:390px;  top:3px;width:44px; height:33px; text-align: center; color: #1656be; text-shadow: none; background-image: url("./image/headerbutton.png");}
+.info#network	{left:440px;  top:3px;width:32px; height:32px;}
+
+.center
+{
+	line-height: 32px;
+}
+
+p#message	{left:40px; top:50px;}
+p.item#mes3			{left:9px;  top:30px;width:463px; height:30px;text-align:center;vertical-align:top;visibility:hidden}
+
+span.fno
+{
+	font-size: 84px;
+}
+
+div.ticket
+{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	text-align: center;
+}

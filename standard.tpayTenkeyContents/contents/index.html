@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja-JP">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+
+        <link rel="stylesheet" type="text/css" href="css/screen.css" charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/confirm.css" charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" charset="utf-8" />
+
+        <script type="text/JavaScript" src="lib/PitTouch-COMMON.js" charset="utf-8"></script>
+        <script type="text/JavaScript" src="lib/PitTouch-AJAX.js" charset="utf-8"></script>
+        <script type="text/JavaScript" src="lib/PitTouch-AJAX_NEW.js" charset="utf-8"></script>
+        <script type="text/JavaScript" src="lib/PitTouch-MODAL.js" charset="utf-8"></script>
+
+        <script type="text/JavaScript" src="lib/dateformat.js" charset="utf-8"></script>
+
+        <script type="text/JavaScript" src="pjf/prooperate.js" charset="utf-8"></script>
+        <script type="text/JavaScript" src="lib/prooperateWrapper.js" charset="utf-8"></script>
+
+        <script type="text/javascript" src="js/moneyCommon.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/getCard.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/index.js" charset="utf-8"></script>
+        <title>社員食堂精算管理システム</title>
+
+        <!--
+ * 社員食堂精算管理システム
+ * index トップ（金額入力）画面
+ * キーパッド入力タイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+-->
+    </head>
+
+    <body>
+        <h1 id="screenTitle">売店</h1>
+
+        <div class="info" id="log" onClick="location.href='./showLog.html'"></div>
+
+        <div class="info" id="keypad"></div>
+
+        <div class="info" id="network"></div>
+
+        <div class="info" id="senddata"></div>
+        <p class="item" id="mes2">ご利用料金：</p>
+
+        <p class="item" id="point2">XXXXXXXX 円<br /></p>
+
+        <p class="item" id="mes3">ご利用ありがとうございました<br /></p>
+
+        <div class="dialog" id="confirm">
+            <h1 id="title"></h1>
+
+            <p id="message"></p>
+
+            <div id="titleLine"></div>
+
+            <div
+                class="dialogButtonConfirm"
+                id="ok"
+                onMousedown="this.style.backgroundImage='url(./css/image/Confirmd.png)';"
+                onMouseup="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+                onMouseout="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+            ></div>
+        </div>
+
+        <div class="button_down" id="work"></div>
+        <div
+            class="button"
+            id="log"
+            onClick="location.href='10-B.html'"
+            onMousedown="this.style.backgroundImage='url(./css/image/Logd.png)';"
+            onMouseup="this.style.backgroundImage='url(./css/image/Log.png)';"
+            onMouseout="this.style.backgroundImage='url(./css/image/Log.png)';"
+        ></div>
+
+        <div
+            class="button"
+            id="menu"
+            onClick="location.href='../index.html'"
+            onMousedown="this.style.backgroundImage='url(./css/image/Menud.png)';"
+            onMouseup="this.style.backgroundImage='url(./css/image/Menu.png)';"
+            onMouseout="this.style.backgroundImage='url(./css/image/Menu.png)';"
+        ></div>
+
+        <div
+            class="button"
+            id="getcard"
+            onMousedown="this.style.backgroundImage='url(./css/image/bluebuttond.png)';"
+            onMouseup="this.style.backgroundImage='url(./css/image/bluebutton.png)';"
+            onMouseout="this.style.backgroundImage='url(./css/image/bluebutton.png)';"
+        >
+            ICカード取込
+        </div>
+
+        <div class="dialog" id="wait">
+            <div id="waitImage"></div>
+
+            <p id="centermessage">通信中です<br />しばらくお待ちください<br /></p>
+        </div>
+
+        <div class="dialog" id="reconfirm2">
+            <p id="centermessage">社員証をかざしてください。</p>
+        </div>
+
+        <div class="dialog" id="requesterr">
+            <p id="centermessage">受け付けました。</p>
+        </div>
+
+        <div class="dialog" id="keypadconfirm">
+            <h1 class="title">エラー</h1>
+
+            <p class="message">
+                keypadが抜けました。<br />
+                処理をクリアします。<br />
+                keypadを接続してください。
+            </p>
+
+            <div class="titleLine"></div>
+
+            <div
+                class="dialogButtonConfirm"
+                id="ok"
+                onMousedown="this.style.backgroundImage='url(./css/image/Confirmd.png)';"
+                onMouseup="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+                onMouseout="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+            ></div>
+        </div>
+
+        <div class="dialog" id="checkerr">
+            <p id="centermessage">ご使用のカードはご利用できません。</p>
+        </div>
+
+        <div class="dialog" id="confirm">
+            <h1 class="title">エラー</h1>
+
+            <p class="message">
+                ログが上限に達しました。<br />
+                ネットワークに接続し未送信ログを送るか<br />
+                ログを削除してください。
+            </p>
+
+            <div class="titleLine"></div>
+
+            <div
+                class="dialogButtonConfirm"
+                id="yes"
+                onMousedown="this.style.backgroundImage='url(./css/image/Confirmd.png)';"
+                onMouseup="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+                onMouseout="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+            ></div>
+        </div>
+    </body>
+</html>

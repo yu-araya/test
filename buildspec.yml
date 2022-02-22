@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Nothing to do in the this phase...
+  pre_build:
+    commands:
+      - echo Nothing to do in the this phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - find ./applications -type f -name "*.tgz" |xargs -I {} tar zxf {} -C ./dist
+      - tar zcf tpay2-applications.tgz dist/
+  post_build:
+    commands:
+      - echo Nothing to do in the this phase...
+artifacts:
+  files:
+    - tpay2-applications.tgz

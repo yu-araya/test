@@ -1,0 +1,70 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: |
+    Demo server for touchpay2
+
+Parameters:
+    KeyName:
+        Description: EC2 Key Pair to allow SSH access
+        Type: "AWS::EC2::KeyPair::KeyName"
+
+    TpayVPC:
+        Description: VPC for touchpay
+        Type: "AWS::EC2::VPC::Id"
+
+    TpayAMI:
+        Description: AMI for touchpay
+        Type: "AWS::EC2::Image::Id"
+
+Resources:
+    PublicSubnetForDemo:
+        Type: AWS::EC2::Subnet
+        Properties:
+            CidrBlock: 172.31.130.0/24 # Required
+            MapPublicIpOnLaunch: true
+            Tags:
+                - Key: Name
+                  Value: tpay-demo-public-subnet
+            VpcId: !Ref TpayVPC # Required
+
+    Tpay2DemoInstance:
+        Type: AWS::EC2::Instance
+        Properties:
+            ImageId: !Ref TpayAMI
+            InstanceType: t3.micro
+            KeyName: !Ref KeyName
+            NetworkInterfaces:
+                - AssociatePublicIpAddress: "true"
+                  DeviceIndex: "0"
+                  SubnetId: !Ref PublicSubnetForDemo
+                  GroupSet:
+                      - !Ref EC2SG
+            Tags:
+                - Key: Name
+                  Value: tpay2-demo-ec2
+
+    EC2SG:
+        Type: AWS::EC2::SecurityGroup
+        Properties:
+            GroupDescription: Allow SSH and HTTP access only Office and Mobile Wi-fi # Required
+            GroupName: tpay2-demo-sg
+            SecurityGroupIngress:
+                # http
+                - IpProtocol: tcp
+                  FromPort: 80
+                  ToPort: 80
+                  CidrIp: 39.110.214.14/32
+                # ssh
+                - IpProtocol: tcp
+                  FromPort: 22
+                  ToPort: 22
+                  CidrIp: 39.110.214.14/32
+            Tags:
+                - Key: Name
+                  Value: tpay2-demo-sg
+            VpcId: !Ref TpayVPC
+
+Outputs:
+    EC2PublicIP:
+        Value: !GetAtt Tpay2DemoInstance.PublicIp
+        Description: Public IP of EC2 instance

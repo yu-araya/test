@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^manual/$ manual/index.html [L]
+    RewriteRule ^manual/(.*)/$  manual/$1/index.html [L]
+
+    # RewriteCond %{THE_REQUEST} "^(.+?) (.*?)/app/webroot/(.*?) (.+?)$"
+    # RewriteRule ^(.*?)$ %2/%3 [R=301,L,NE]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

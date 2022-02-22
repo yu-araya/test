@@ -1,0 +1,92 @@
+/*
+ * 社員食堂精算管理システム
+ * showLog ログ画面
+ * 非接触ICタイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+
+/* ボタン */
+
+.button
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+.button#back		{left:143px;  top:227px;width:95px; height:35px;background-image:url(./image/Pageback.png);}
+.button#save		{left:243px;  top:227px;width:95px; height:35px;background-image:url(./image/Save.png);}
+.button#getcard {
+	left:370px;  top:227px;width:95px; height:35px;background-image:url(./image/bluebutton.png);
+	font-size: 15px;
+	color: #ffffff;
+	text-shadow:#444 1px 1px 3px;
+	text-align: center;
+	line-height: 34px;
+}
+
+/* ボタン onMouseDownで動作するもの */
+
+.button_down
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+.button_down#work		{left:7px;   top:45px; width:466px;}
+
+#work .comment
+{
+	margin-left: 15px;
+	font-size: 18px;
+}
+
+.idivisionButton
+{
+	display: inline-block;
+	width: 100px;
+	border: 1px solid #cccccc;
+	text-align: center;
+	padding: 6px 0;
+	margin: 5px 0 0 12px;
+	background-color: #999999;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.fnoButton
+{
+	display: inline-block;
+	width: 100px;
+	border: 1px solid #cccccc;
+	text-align: center;
+	padding: 1px 0;
+	margin: 5px 0 0 12px;
+	background-color: #999999;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.idivisionButton.active, .fnoButton.active
+{
+	background-color: #8fdfeb;
+	color: #000000;
+}
+
+.info
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-size: 16px;
+
+	text-shadow:#444 1px 1px 3px;
+}
+
+.info#network	{left:440px;  top:3px;width:32px; height:32px;}

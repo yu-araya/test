@@ -1,0 +1,47 @@
+/*
+ * 社員食堂精算管理システム
+ * 画面ベース
+ * 非接触ICタイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+body
+{
+	color: #000000;
+	background-image: url(./image/BackGround.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+
+div
+{
+	border: 0px;
+}
+
+/* タイトル */
+h1#screenTitle
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-size: 24px;
+	font-weight: normal;
+	margin:0px;
+
+	left:15px;
+	top:8px;
+	width:300px;
+	height:40px;
+	
+	text-shadow:#444 1px 1px 2px;
+}
+

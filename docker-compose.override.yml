@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    https-portal:
+        image: steveltn/https-portal:1
+        ports:
+            - "443:443"
+        links:
+            - touchpay-web:touchpay-web
+        restart: always
+        volumes:
+            - ./certs:/var/lib/https-portal
+        environment:
+            STAGE: "local"
+            DOMAINS: >-
+                tpay.local -> http://touchpay-web

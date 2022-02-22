@@ -1,0 +1,12 @@
+.md-header{
+    background-color: black;
+}
+.md-search__input{
+    background-color: white;
+}
+.md-search__input+.md-search__icon{
+    color: black;
+}
+.md-search__input::placeholder{
+    color: #9E9E9E;
+}

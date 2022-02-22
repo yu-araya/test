@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Foods</title>
+<style>
+.meal {
+  padding: 0.5em 1em;
+  margin: 0.25em 0;
+  color: #232323;
+  background: #fff8e8;
+  border-left: solid 10px #ffc06e;
+}
+
+.meal p {
+  margin: 0; 
+  padding: 0;
+}
+
+.new-meal {
+  border-left: solid 10px #ffa04e;
+  background: #ffeeee;
+  font-weight: bold;
+}
+
+.removed-meal {
+  border-left: solid 10px #666666;
+  background: #aaaaaa;
+}
+
+#lastUpdated, #limit {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+#reload-button {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 3px 10px 3px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-radius: 4px 4px 0 0;
+  transition: .2s;
+}
+
+#reload-button:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+</style>
+<meta http-equiv="Cache-Control" content="no-store" />
+</head>
+<script src="/TouchPay.standard/js/meals.js"></script>
+<body>
+<div>
+<span>最終更新日時</span><span id="lastUpdated"></span><span id="nextUpdateMessage"></span>
+<button id="reload-button" onclick="start_meals();">再読込</button>
+</div>
+<div id="hidden-meal" class="meal" style="display: none;">
+<p>
+<span class="employee_id"></span>
+<span class="employee_name1"></span>
+<span class="employee_name2"></span>
+(<span class="employee_kbn_name"></span>)
+<br>
+<span class="instrument_name"></span>
+<span class="food_division_name"></span>
+<span class="food_cost"></span>円
+<span class="card_recept_time"></span>
+</p>
+</div>
+<div id="meals"></div>
+</body>
+</html>

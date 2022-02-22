@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration>
+<property>
+    <!-- メッセージ -->
+    <message>
+        <data id="infoMsg01" value="登録を行いました。"/>
+        <data id="infoMsg02" value="更新を行いました。"/>
+        <data id="infoMsg03" value="削除を行いました。"/>
+        <data id="infoMsg04" value="出力情報がありません。"/>
+        <data id="infoMsg05" value="パスワードリセットを行いました。"/>
+        <data id="infoMsg06" value="予約を受け付けました。"/>
+        <data id="infoMsg07" value="確定しました。"/>
+
+        <data id="errorMsg01" value="開始日が存在しない日付に設定されています。"/>
+        <data id="errorMsg02" value="終了日が存在しない日付に設定されています。"/>
+        <data id="errorMsg03" value="終了日が本日より前になっています。"/>
+        <data id="errorMsg04" value="開始日が終了日より後になっています。"/>
+        <data id="errorMsg05" value="指定した期間が含まれた登録が既にあります。"/>
+        <data id="errorMsg06" value="金額は半角数字で入力してください。"/>
+        <data id="errorMsg07" value="開始日を経過している為、開始日を変更できません。"/>
+        <data id="errorMsg08" value="終了したキャンペーンは変更できません。"/>
+        <data id="errorMsg09" value="購入枚数を半角数字で入力してください。"/>
+        <data id="errorMsg10" value="パスワードを入力してください。"/>
+        <data id="errorMsg11" value="入力された二つのパスワードが一致しません。"/>
+        <data id="errorMsg12" value="社員コードは既に他の社員に登録されています。"/>
+        <data id="errorMsg13" value="社員コードは半角英数字で入力してください。"/>
+        <data id="errorMsg14" value="ICカード番号（正）開始日に存在しない日付が設定されています。"/>
+        <data id="errorMsg15" value="ICカード番号（正）終了日に存在しない日付が設定されています。"/>
+        <data id="errorMsg16" value="ICカード番号（正）の有効期間（開始）が有効期間（終了）より後になっています。"/>
+        <data id="errorMsg17" value="パスワードは半角英数字で入力してください。"/>
+        <data id="errorMsg18" value="ICカード番号（正）を設定された場合、ICカード番号（正）開始日を入力してください。"/>
+        <data id="errorMsg19" value="ICカード番号（副）を設定された場合、ICカード番号（副）開始日を入力してください。"/>
+        <data id="errorMsg20" value="IDとパスワードを入力してください。"/>
+        <data id="errorMsg21" value="氏名に，（カンマ）または’（シングルコーテーション）、”（ダブルコーテーション）が含まれています。"/>
+        <data id="errorMsg22" value="所属に，（カンマ）または’（シングルコーテーション）、”（ダブルコーテーション）が含まれています。"/>
+        <data id="errorMsg23" value="ICカード番号（副）開始日に存在しない日付が設定されています。"/>
+        <data id="errorMsg24" value="ICカード番号（副）終了日に存在しない日付が設定されています。"/>
+        <data id="errorMsg25" value="ICカード番号（副）の有効期間（開始）が有効期間（終了）より後になっています。"/>
+        <data id="errorMsg26" value="社員コードを入力してください。"/>
+        <data id="errorMsg27" value="ICカード番号（正）は半角英数字で入力してください。"/>
+        <data id="errorMsg28" value="ICカード番号（副）は半角英数字で入力してください。"/>
+        <data id="errorMsg29" value="社員区分を入力してください。"/>
+        <data id="errorMsg30" value="社員区分が存在しません。"/>
+        <data id="errorMsg31" value="アップロードファイルの列数が不正です。"/>
+        <data id="errorMsg32" value="IDを入力してください。"/>
+        <data id="errorMsg33" value="IDまたはパスワードが違います。"/>
+        <data id="errorMsg34" value="%sは%s桁以内で入力してください。"/>
+        <data id="errorMsg35" value="%sは既に他の社員に登録されています。"/>
+        <data id="errorMsg36" value="ICカード番号（正）とICカード番号（副）に同じICカード番号が入力されています。"/>
+        <data id="errorMsg37" value="登録するデータがありません。"/>
+        <data id="errorMsg38" value="入力された%sは登録されていません。"/>
+        <data id="errorMsg39" value="%sを入力してください。"/>
+        <data id="errorMsg40" value="%sに存在しない%sが設定されています。"/>
+        <data id="errorMsg41" value="%sは締切時間を過ぎているため登録・変更ができません。"/>
+        <data id="errorMsg42" value="予約日または予約の取り消し日を選択してください。"/>
+        <data id="errorMsg43" value="%sは%s文字以上で入力してください。"/>
+        <data id="errorMsg44" value="%sは締切時間を過ぎているため取消しができません。"/>
+        <data id="errorMsg45" value="不正なリクエストです。"/>
+        <data id="errorMsg46" value="有効な社員データがありません。"/>
+        <data id="errorMsg47" value="食事予約がありません。"/>
+        <data id="errorMsg48" value="システムエラーが発生しました。サポート窓口へご連絡ください。"/>
+        <data id="errorMsg49" value="検索年月日を入力してください。"/>
+        <data id="errorMsg50" value="検索年月日はYYYY-MM-DD形式で入力してください。例) 2019-01-01"/>
+        <data id="errorMsg51" value="開始年月日が終了年月日より未来を指定しています。"/>
+        <data id="errorMsg52" value="食事区分は%sのいずれかで入力してください。"/>
+        <data id="errorMsg53" value="開始日が不正です、正しい年月日を入力して下さい。"/>
+        <data id="errorMsg54" value="削除フラグは0か1で入力してください。"/>
+        <data id="errorMsg55" value="開始年月日が重複しています。"/>
+        <data id="errorMsg56" value="社員コードがファイル内で重複しています。"/>
+        <data id="errorMsg57" value="社員区分は1〜99の間で入力してください。"/>>
+        <data id="errorMsg58" value="社員区分が既に登録されています。"/>
+		<data id="errorMsg59" value="社員の最大登録人数に達している為、%sできません。"/>
+        <data id="errorMsg60" value="%sの列の値が不正です。未入力または個数を入力して下さい。"/>
+        <data id="errorMsg61" value="曜日の列は1件以上入力して下さい。"/>
+
+        <data id="guidance01" value="※完全一致で検索します"/>
+        <data id="guidance02" value="※部分一致で検索します"/>
+        <data id="guidance03" value="&lt;font color='#0000ff'&gt;※グレー行は、削除されています&lt;/font&gt;"/>
+
+        <data id="exceptionMsg01" value="処理中にエラーが検出されました。"/>
+
+        <data id="apiMessage01" value="社員情報が登録されていません。" />
+        <data id="apiMessage02" value="このカードはご利用できません。システム担当者にご確認ください。"/>
+        <data id="apiMessage03" value="社員情報取得に失敗しました。"/>
+        <data id="apiMessage04" value="オーダー登録に失敗しました。"/>
+        <data id="apiMessage05" value="キャンセルに失敗しました。システム担当者へご連絡ください。"/>
+        <data id="apiMessage06" value="指定の注文は存在しません。"/>
+
+    </message>
+
+    <!-- 新規登録カード受付時間のデフォルト時刻 -->
+    <default_card_recept_time>
+        <data id="" value="12:00"/>
+    </default_card_recept_time>
+
+    <!-- 予約締め時間 -->
+    <reservation_closing_time>
+        <data id="1" value="09:00:00"/>
+        <data id="2" value="09:00:00"/>
+    </reservation_closing_time>
+
+    <!-- 予約キャンセル締め時間 -->
+    <reservation_cancel_closing_time>
+        <data id="1" value="09:00:00"/>
+        <data id="2" value="09:00:00"/>
+    </reservation_cancel_closing_time>
+
+    <!-- 会社情報 -->
+    <corp_info>
+        <data id="1" value="株式会社　ｘｘｘ"/>
+        <data id="2" value="住所を設定"/>
+        <data id="3" value="1234-56-7890"/>
+        <data id="4" value="1234-56-7891"/>
+    </corp_info>
+
+    <!-- 初期パスワード -->
+    <init_password>
+        <data id="" value="0000"/>
+    </init_password>
+
+    <!-- 日替わり機能のON／OFF -->
+    <daily_menu_flg>
+        <data id="" value="1" />
+    </daily_menu_flg>
+
+    <!-- 予約一括登録機能のON/OFF -->
+　　<bulk_reservation_flg>
+        <data id="" value="1" />
+    </bulk_reservation_flg>
+
+    <!-- スタンダードプラン -->
+　　<plan_config>
+        <data id="standard_plan" value="0" />
+    </plan_config>
+
+    <!-- PitTouchBiz利用 -->
+　　<pittouchbiz_valid>
+        <data id="is_valid" value="0" />
+    </pittouchbiz_valid>
+
+    <!-- 表示件数(行数)および更新間隔(msec)および停止(分) -->
+    <meals>
+        <data id="limit"    value="12" />
+        <data id="interval" value="3000" />
+        <data id="suspend"  value="10" />
+    </meals>
+
+    <!-- テンキー向け食事区分 -->
+    <tenkey_food_division>
+        <data id="" value="13" />
+    </tenkey_food_division>
+
+
+    <!-- 最新コンテンツセットバージョン-->
+　　<latest_contents_set_version>
+        <!--喫食管理-->
+        <data id="E" value="1.50rev63314" />
+        <!--予約管理-->
+        <data id="R" value="1.50rev63314" />
+        <!--テンキー-->
+        <data id="T" value="1.00rev00004" />
+    </latest_contents_set_version>
+
+    <!-- コンテンツセットファイル名-->
+　　<contents_set_filename>
+        <data id="E" value="standard.tpayContents.zip" />
+        <data id="R" value="standard.tpayRContents.zip" />
+        <data id="T" value="standard.tpayTenkeyContents.zip" />
+　　</contents_set_filename>
+
+    <!-- コンテンツセットダウンロードURI-->
+　　<contents_set_download_url>
+        <data id="url" value="https://demo.touchpay.biz/TouchPay.standard/contentsset" />
+    </contents_set_download_url>
+
+    <max_employee_num>
+        <data id="" value="10000" />
+    </max_employee_num>
+
+</property>

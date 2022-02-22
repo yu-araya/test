@@ -1,0 +1,13 @@
+{
+    "baseUrl": "http://localhost:8081/",
+    "env": {
+        "sysuser": "sysadmin",
+        "syspassword": "initpasswd",
+        "db": {
+          "host": "e2e-mysql",
+          "user": "dining_standard",
+          "password": "dining_standard",
+          "database": "standard_tpay"
+        }
+      }
+}

@@ -1,0 +1,105 @@
+/*
+ * 社員食堂精算管理システム
+ * showLog ログ画面
+ * 
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+
+
+/* ボタン */
+
+.button
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+
+.button#clear		{left:93px;  top:227px;width:95px; height:35px;background-image:url(./image/Del.png);}
+.button#back		{left:193px;  top:227px;width:95px; height:35px;background-image:url(./image/Pageback.png);}
+.button#save		{left:293px;  top:227px;width:95px; height:35px;background-image:url(./image/Save.png);}
+
+.button#right		{left:395px;  top:227px;width:60px; height:35px;background-image:url(./image/RightArrow.png);}
+.button#left		{left:26px;  top:227px;width:60px; height:35px;background-image:url(./image/LeftArrow.png);}
+
+/* テーブル */
+
+table
+{
+	border-collapse: collapse;
+	border: 1px solid #839E99;
+	background: #f1f8ee;
+	color: #033;
+	
+	position:absolute;
+	
+	left:26px;
+	top:41px;
+
+	font-size: 14px;
+	
+	table-layout:fixed;
+	width : 430px ;
+	
+	visibility: hidden;
+}
+
+td, th
+{
+	padding: 2px;
+	line-height: 1.3em;
+
+	border: 1px solid #839E99;
+	
+	white-space: nowrap;
+	overflow:hidden; 
+}
+
+td
+{
+	text-align: center;
+}
+
+th
+{
+	background: #839E99;
+	color: #fff;
+	font-weight: normal;
+	padding:0.2em 0.5em 0 .5em;
+	vertical-align: middle;
+}
+
+
+thead th
+{
+	background: #2C5755;
+	text-align: center;
+}
+
+.odd td
+{
+	background: #DBE6DD;
+}
+
+.odd th
+{
+	background: #6E8D88;
+}
+
+/* ダイアログ */
+
+p.message	{left:40px; top:50px;}
+
+.dialogButtonYes#yes	{background-image:url(./image/Yes.png);}
+.dialogButtonNo#no		{background-image:url(./image/No.png);}
+.dialogButtonYes#syes	{background-image:url(./image/Yes.png);}
+.dialogButtonNo#sno     {background-image:url(./image/No.png);}
+.dialogButtonConfirm#fok {background-image:url(./image/Confirm.png);}
+.dialogButtonConfirm#eok {background-image:url(./image/Confirm.png);}

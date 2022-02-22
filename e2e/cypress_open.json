@@ -1,0 +1,14 @@
+{
+  "baseUrl": "http://localhost:8081/",
+  "env": {
+    "sysuser": "sysadmin",
+    "syspassword": "initpasswd",
+    "db": {
+      "host": "localhost",
+      "user": "dining_standard",
+      "password": "dining_standard",
+      "database": "standard_tpay",
+      "port": "3307"
+    }
+  }
+}

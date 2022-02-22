@@ -1,0 +1,13 @@
+{
+    "applicationName": "TouchPay.standard",
+    "deploymentGroupName": "tpay2-demo-deploy-grp",
+    "fileExistsBehavior": "OVERWRITE",
+    "revision": {
+      "revisionType": "S3",
+      "s3Location": {
+        "bucket": "tpay2-demo-bucket",
+        "key": "artifacts/TouchPay.standard.tgz",
+        "bundleType": "tgz"
+      }
+    }
+}

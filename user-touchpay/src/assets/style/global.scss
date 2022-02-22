@@ -1,0 +1,19 @@
+$THEME_COLOR: #7957d5;
+$BACKGROUND_COLOR: #eeeeee;
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: $BACKGROUND_COLOR;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.w100 {
+    width: 100%;
+}

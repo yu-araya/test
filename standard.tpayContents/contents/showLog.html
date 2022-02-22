@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+
+<html lang="ja-JP"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Script-Type" content="text/javascript"> 
+		<meta http-equiv="Content-Style-Type" content="text/css"> 
+		
+		<link rel="stylesheet" type="text/css" href="css/screen.css" charset="utf-8"> 	
+		<link rel="stylesheet" type="text/css" href="css/confirm.css" charset="utf-8"> 	
+		<link rel="stylesheet" type="text/css" href="css/showLog.css" charset="utf-8"> 	
+
+		<script type="text/JavaScript" src="lib/PitTouch-COMMON.js" charset="utf-8"></script>
+		<script type="text/JavaScript" src="lib/PitTouch-MODAL.js" charset="utf-8"></script>
+
+		<script type="text/JavaScript" src="lib/dateformat.js" charset="utf-8"></script>
+        <script type="text/JavaScript" src="lib/checkversion.js" charset="utf-8"></script>
+
+		<script type="text/JavaScript" src="pjf/prooperate.js" charset="utf-8"></script>
+		<script type="text/JavaScript" src="lib/prooperateWrapper.js" charset="utf-8"></script>
+
+        <script type="text/JavaScript" src="pjf/profileoperate.js" charset="utf-8"></script>
+		<script type="text/JavaScript" src="lib/profileoperateWrapper.js" charset="utf-8"></script>
+
+		<script type="text/javascript" src="js/property.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/showLog.js" charset="utf-8"></script>
+
+		<title>社員食堂精算管理システム</title> 
+
+<!--
+ * 社員食堂精算管理システム
+ * showLog ログ画面
+ * 
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+-->
+	</head>
+	
+	<body> 
+
+	<h1 id="screenTitle">
+	ログ表示
+	</h1>
+	<div class="info">
+		<div id="count"></div>
+	</div>
+
+	<div class="button" id="clear" 
+		onMousedown="this.style.backgroundImage='url(./css/image/Deld.png)';" 
+		onMouseup="this.style.backgroundImage='url(./css/image/Del.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/Del.png)';"> 
+	</div>
+
+	<div class="button" id="back" 
+		onClick="location.href='./index.html'"
+		onMousedown="this.style.backgroundImage='url(./css/image/Pagebackd.png)';" 
+		onMouseup="this.style.backgroundImage='url(./css/image/Pageback.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/Pageback.png)';"> 
+	</div>
+
+    <div class="button" id="save" 
+        onMousedown="this.style.backgroundImage='url(./css/image/Saved.png)';" 
+        onMouseup="this.style.backgroundImage='url(./css/image/Save.png)';"
+        onMouseout="this.style.backgroundImage='url(./css/image/Save.png)';"> 
+    </div>
+
+	<div class="button" id="right" 
+		onMousedown="this.style.backgroundImage='url(./css/image/RightArrowd.png)';" 
+		onMouseup="this.style.backgroundImage='url(./css/image/RightArrow.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/RightArrow.png)';"> 
+	</div>
+
+	<div class="button" id="left" 
+		onMousedown="this.style.backgroundImage='url(./css/image/LeftArrowd.png)';" 
+		onMouseup="this.style.backgroundImage='url(./css/image/LeftArrow.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/LeftArrow.png)';"> 
+	</div>
+
+	<table id="logTable" >
+		<thead>
+			<tr>
+				<th scope="col" width="158px">時刻</th>
+				<th scope="col" width="172px">ID</th>
+				<th scope="col" width="100px">ステータス</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr >
+				<td id="r01">
+				</td>
+				<td id="r02">
+				</td>
+				<td id="r03">
+				</td>
+			</tr>
+			<tr class="odd">
+				<td id="r11">
+				</td>
+				<td id="r12">
+				</td>
+				<td id="r13">
+				</td>
+			</tr>
+			<tr >
+				<td id="r21">
+				</td>
+				<td id="r22">
+				</td>
+				<td id="r23">
+				</td>
+			</tr>
+			<tr class="odd">
+				<td id="r31">
+				</td>
+				<td id="r32">
+				</td>
+				<td id="r33">
+				</td>
+			</tr>
+			<tr >
+				<td id="r41">
+				</td>
+				<td id="r42">
+				</td>
+				<td id="r43">
+				</td>
+			</tr>
+			<tr class="odd">
+				<td id="r51">
+				</td>
+				<td id="r52">
+				</td>
+				<td id="r53">
+				</td>
+			</tr>
+			<tr >
+				<td id="r61">
+				</td>
+				<td id="r62">
+				</td>
+				<td id="r63">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="dialog" id="confirm">
+		<h1 class="title">
+		ログ全削除
+		</h1>
+		<p class="message">
+		すべてのログを削除します。<br>
+		未送信データも削除されます。<br>
+		元に戻すことができません。<br><br>
+		ログの全削除を行いますか？
+		</p>
+
+		<div class="titleLine">
+		</div>
+		 
+		<div class="dialogButtonYes" id="yes" 
+			onMousedown="this.style.backgroundImage='url(./css/image/Yesd.png)';" 
+			onMouseup="this.style.backgroundImage='url(./css/image/Yes.png)';"
+			onMouseout="this.style.backgroundImage='url(./css/image/Yes.png)';"> 
+		</div>
+
+		<div class="dialogButtonNo" id="no" 
+			onMousedown="this.style.backgroundImage='url(./css/image/Nod.png)';" 
+			onMouseup="this.style.backgroundImage='url(./css/image/No.png)';"
+			onMouseout="this.style.backgroundImage='url(./css/image/No.png)';"> 
+		</div>
+	</div>
+	<div class="dialog" id="saveconfirm">
+		<h1 class="title">
+		ログの保存
+		</h1>
+		<p class="message">
+		すべてのログをUSBメモリに保存します。<br>
+		USBメモリが接続されていることを確認してください。<br><br>
+		ログの保存を行いますか？
+		</p>
+		<div class="titleLine">
+		</div>
+		 
+		<div class="dialogButtonYes" id="syes" 
+			onMousedown="this.style.backgroundImage='url(./css/image/Yesd.png)';" 
+			onMouseup="this.style.backgroundImage='url(./css/image/Yes.png)';"
+			onMouseout="this.style.backgroundImage='url(./css/image/Yes.png)';"> 
+		</div>
+
+		<div class="dialogButtonNo" id="sno" 
+			onMousedown="this.style.backgroundImage='url(./css/image/Nod.png)';" 
+			onMouseup="this.style.backgroundImage='url(./css/image/No.png)';"
+			onMouseout="this.style.backgroundImage='url(./css/image/No.png)';"> 
+		</div>
+	</div>
+	<div class="dialog" id="savefinish">
+		<h1 class="title">
+		ログ保存の完了
+		</h1>
+		<p class="message" id="savedfilename">
+		ログをUSBメモリに保存しました。
+		</p>
+		<div class="titleLine">
+		</div>
+ 		<div class="dialogButtonConfirm" id="fok" 
+			onMousedown="this.style.backgroundImage='url(./css/image/Confirmd.png)';" 
+			onMouseup="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+			onMouseout="this.style.backgroundImage='url(./css/image/Confirm.png)';"> 
+		</div>
+	</div>
+	<div class="dialog" id="savefailed">
+		<h1 class="title">
+		ログ保存の失敗
+		</h1>
+		<p class="message" id="errormessage">
+		ログの保存に失敗しました。
+		</p>
+		<div class="titleLine">
+		</div>
+ 		<div class="dialogButtonConfirm" id="eok" 
+			onMousedown="this.style.backgroundImage='url(./css/image/Confirmd.png)';" 
+			onMouseup="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+			onMouseout="this.style.backgroundImage='url(./css/image/Confirm.png)';"> 
+		</div>
+	</div>
+	<div class="dialog" id="savewait">
+		<div id="waitImage">
+		</div>
+		<p id="centermessage">
+		ログ書き込み中です<br>しばらくお待ちください<br>
+		</p>
+	</div>
+	</body> 
+</html>

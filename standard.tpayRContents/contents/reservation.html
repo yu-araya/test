@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja-JP">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+
+		<link rel="stylesheet" type="text/css" href="css/screen.css" charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/confirm.css" charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/reservation.css" charset="utf-8">
+
+		<script type="text/JavaScript" src="lib/PitTouch-COMMON.js" charset="utf-8"></script>
+		<script type="text/JavaScript" src="lib/PitTouch-AJAX.js" charset="utf-8"></script>
+		<script type="text/JavaScript" src="lib/PitTouch-MODAL.js" charset="utf-8"></script>
+
+		<script type="text/JavaScript" src="pjf/prooperate.js" charset="utf-8"></script>
+		<script type="text/JavaScript" src="lib/prooperateWrapper.js" charset="utf-8"></script>
+
+		<script type="text/javascript" src="js/property.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/foodCommon.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/reservation.js" charset="utf-8"></script>
+
+		<title>社員食堂精算管理システム</title>
+	</head>
+
+<!--
+ * 社員食堂精算管理システム
+ * index トップ画面
+ * 非接触ICタイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ *
+ * @author AGILECORE, INC.
+ * @version 1.0
+ *
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ *
+-->
+	<body>
+
+	<h1 id="screenTitle">予約情報</h1>
+
+	<div class="info" id="network"></div>
+	<div class="info" id="emp_info"></div>
+
+	<div class="button_down" id="work">
+		<div class="target_date" id="target_date">　</div>
+		<table class="calendar">
+			<thead>
+				<tr>
+					<th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+			</tbody>
+		</table>
+	</div>
+
+	<div class="button" id="left" 
+		onMousedown="this.style.backgroundImage='url(./css/image/LeftSArrowd.png)';"
+		onMouseup="this.style.backgroundImage='url(./css/image/LeftSArrow.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/LeftSArrow.png)';">
+	</div>
+
+	<div class="button" id="right" 
+		onMousedown="this.style.backgroundImage='url(./css/image/RightSArrowd.png)';"
+		onMouseup="this.style.backgroundImage='url(./css/image/RightSArrow.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/RightSArrow.png)';">
+	</div>
+
+	<div class="button" id="back"
+		onMousedown="this.style.backgroundImage='url(./css/image/ButtonBlued.png)';"
+		onMouseup="this.style.backgroundImage='url(./css/image/ButtonBlue.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/ButtonBlue.png)';">
+		TOPへ戻る
+	</div>
+
+	<div class="button" id="save" 
+		onMousedown="this.style.backgroundImage='url(./css/image/ButtonGreend.png)';"
+		onMouseup="this.style.backgroundImage='url(./css/image/ButtonGreen.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/ButtonGreen.png)';">
+		登録
+	</div>
+
+	<div class="button disabled" id="up" 
+		onMousedown="this.style.backgroundImage='url(./css/image/UpArrowd.png)';"
+		onMouseup="this.style.backgroundImage='url(./css/image/UpArrow.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/UpArrow.png)';">
+	</div>
+
+	<div class="button" id="down" 
+		onMousedown="this.style.backgroundImage='url(./css/image/DownArrowd.png)';"
+		onMouseup="this.style.backgroundImage='url(./css/image/DownArrow.png)';"
+		onMouseout="this.style.backgroundImage='url(./css/image/DownArrow.png)';">
+	</div>
+
+	<div class="dialog" id="wait">
+		<div id="waitImage"></div>
+		<p id="centermessage">
+			通信中です<br>しばらくお待ちください<br>
+		</p>
+	</div>
+
+	<div class="dialog" id="alertmessage">
+		<p id="centermessage"></p>
+	</div>
+
+	<div class="dialog" id="confirm">
+		<h1 class="title">エラー</h1>
+		<p class="message"></p>
+		<div class="titleLine"></div>
+		<div class="dialogButtonConfirm" id="yes"
+			onMousedown="this.style.backgroundImage='url(./css/image/Confirmd.png)';"
+			onMouseup="this.style.backgroundImage='url(./css/image/Confirm.png)';"
+			onMouseout="this.style.backgroundImage='url(./css/image/Confirm.png)';">
+		</div>
+	</div>
+
+	<div class="dialog" id="selectmenu">
+		<h1 class="title">メニュー選択</h1>
+		<div id="selectdate"></div>
+		<div id="close">×</div>
+		<p class="message"></p>
+		<div class="titleLine"></div>
+		<div class="menu">
+			<script type="text/javascript">
+				for (var i = 0; i < FNO_LIST.length; i++) {
+					document.write("<div id='menu" + (i + 1) + "' class='menuButton base" + FNO_LIST[i][3] + " fno" + FNO_LIST[i][0] + "'>" + FNO_LIST[i][1] + "</div>");
+				}
+			</script>
+		</div>
+		<div class="button" id="cancel">予約取消</div>
+	</div>
+
+	</body>
+</html>

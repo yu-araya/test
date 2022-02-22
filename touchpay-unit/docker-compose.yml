@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  unit-mysql:
+    container_name: unit-mysql
+    build:
+      context: .
+      dockerfile: ./mysql/Dockerfile
+    environment:
+      MYSQL_DATABASE: standard_tpay
+      MYSQL_USER: dining_standard
+      MYSQL_PASSWORD: dining_standard
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Tokyo
+    volumes:
+      - ./mysql/sqls:/docker-entrypoint-initdb.d
+    ports:
+      - 3366:3306
+
+  touchpay-unit:
+    container_name: touchpay-unit
+    build: 
+      context: .
+      dockerfile: ./unit/Dockerfile
+      args:
+        docroot: /var/www/html
+        appname: TouchPay.standard
+    volumes:
+      - ./unit:/unit/
+      - ../TouchPay.standard:/var/www/html/TouchPay.standard
+      - ../TouchPay.standard_r:/var/www/html/TouchPay.standard_r
+      - ../TouchPay.standard_g:/var/www/html/TouchPay.standard_g
+    ports:
+      - 8888:80
+    environment:
+      DEBUG_LEVEL: 2
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: dining_standard
+      MYSQL_PASSWORD: dining_standard
+      TEST_PATTERN: All
+      WAIT_HOSTS: unit-mysql:3306
+    depends_on:
+      - unit-mysql

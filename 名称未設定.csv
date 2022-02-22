@@ -1,0 +1,3 @@
+"id","login_name","password","role","created","modified","delete_flg"
+1,"sysadmin","initpasswd","1","2021-06-22 16:54:15","2021-06-22 16:54:15",0
+2,"sysguest","initpasswd","2","2021-06-22 16:54:15","2021-06-22 16:54:15",0

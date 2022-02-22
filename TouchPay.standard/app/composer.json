@@ -1,0 +1,50 @@
+{
+    "name": "cakephp/app",
+    "description": "CakePHP skeleton app",
+    "homepage": "https://cakephp.org",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.6",
+	"cakephp/cakephp": "3.9.*",
+        "phpoffice/phpexcel": "^1.8",
+        "tecnickcom/tcpdf": "^6.3",
+        "cakephp/migrations": "@stable"
+    },
+    "autoload": {
+         "psr-4": {
+             "App\\": "src/"
+	 }
+    },
+    "suggest": {
+        "ext-openssl": "You need to install ext-openssl or ext-mcrypt to use AES-256 encryption",
+        "ext-mcrypt": "You need to install ext-openssl or ext-mcrypt to use AES-256 encryption"
+    },
+    "require-dev": {
+        "cakephp/debug_kit": "~3.0",
+        "cakephp/cakephp-codesniffer": "^3.0",
+        "phpunit/phpunit": "^5.7",
+        "cakephp/bake": "^1.9.0"
+    },
+    "autoload-dev": {
+         "psr-4": {
+             "App\\Test\\": "tests/",
+	     "Cake\\Test\\": "vendor/cakephp/cakephp/tests/"
+	 }
+    },
+    "config": {
+        "vendor-dir": "vendor/",
+        "process-timeout": 0
+    },
+    "bin": [
+        "bin/cake"
+    ],
+    "scripts": {
+        "check": [
+            "@test",
+            "@cs-check"
+        ],
+        "cs-check": "./vendor/bin/phpcs --colors -p --extensions=php --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests ./config ./webroot",
+        "test": "./bin/cake test core AllTests --stderr"
+    }
+}

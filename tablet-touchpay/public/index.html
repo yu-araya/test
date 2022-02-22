@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css" />
+        <link rel="manifest" href="manifest.json" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body>
+        <script
+            async
+            src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js"
+            integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            /* ピッチインピッチアウトによる拡大縮小を禁止 */
+            document.documentElement.addEventListener(
+                "touchstart",
+                function(e) {
+                    if (e.touches.length >= 2) {
+                        e.preventDefault();
+                    }
+                },
+                { passive: false }
+            );
+            /* ダブルタップによる拡大を禁止 */
+            var t = 0;
+            document.documentElement.addEventListener(
+                "touchend",
+                function(e) {
+                    var now = new Date().getTime();
+                    if (now - t < 350) {
+                        e.preventDefault();
+                    }
+                    t = now;
+                },
+                false
+            );
+        </script>
+        <noscript>
+            <strong
+                >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript
+                enabled. Please enable it to continue.</strong
+            >
+        </noscript>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+    </body>
+</html>

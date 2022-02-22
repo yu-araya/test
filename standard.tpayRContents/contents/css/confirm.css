@@ -1,0 +1,257 @@
+/*
+ * 社員食堂精算管理システム
+ * 確認画面ベース
+ * 非接触ICタイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+
+h1.title,p.message,p#centermessage
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-weight: normal;
+	margin:0px;
+}
+
+h1.title
+{
+	font-size: 24px;left:20px;top:10px;
+}
+
+p.message, p#centermessage, p#mes3
+{
+    font-size:26px;left:40px;top:15px;right:40px;
+    text-align:center;vertical-align:top;
+}
+
+#confirm p.message
+{
+	top: 50px;
+	font-size: 24px !important;
+}
+
+p#touch
+{
+    font-size:34px;left:40px;top:15px;right:40px;
+    text-align:center;vertical-align:top;
+}
+
+p#thanks
+{
+    font-size:25px;left:40px;top:15px;right:40px;
+    text-align:center;vertical-align:top;
+}
+
+p#loadingmessage
+{
+	position: absolute;
+	font-size:20px;left:40px;top:60px;right:40px;
+	text-align:center;vertical-align:top;
+}
+
+
+#confirm > p#centermessage		{left:0px;top:100px;width:440px;height:30px;text-align:center;vertical-align:top;}
+#wait > p#centermessage			{left:0px;top:100px;width:440px;height:30px;text-align:center;vertical-align:top;}
+#reconfirm1 > p#centermessage	{left:0px;top:10px; width:440px;height:30px;text-align:center;vertical-align:top;}
+#reconfirm2 > p#centermessage	{left:0px;top:20px; width:440px;height:30px;text-align:center;vertical-align:top;}
+#requesterr > p#centermessage	{left:0px;top:20px; width:440px;height:30px;text-align:center;vertical-align:top;}
+#checkerr > p#centermessage		{left:0px;top:20px; width:440px;height:30px;text-align:center;vertical-align:top;}
+#savewait > p#centermessage		{left:0px;top:100px;width:440px;height:30px;text-align:center;vertical-align:top;}
+#ajaxerr > p#centermessage		{left:0px;top:20px; width:440px;height:30px;text-align:center;vertical-align:top;}
+#alertmessage > p#centermessage	{left:0px;top:20px; width:440px;height:30px;text-align:center;vertical-align:top;}
+
+.titleLine
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+
+	left:10px;
+	top:36px;
+	width:420px;
+	height:3px;
+	
+	background-image:url(./image/Line.png);
+}
+
+#waitImage
+{
+    -webkit-background-size: 100% 100%;
+    position:absolute;
+
+    left:210px;
+    top:36px;
+    width:32px;
+    height:32px;
+    
+    background-image:url(./image/Wait.gif);
+}
+
+.dialogButtonYes,.dialogButtonNo,.dialogButtonConfirm
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+.dialogButtonNo
+{
+	left:100px;
+	top:180px;
+	width:95px;
+	height:35px;
+}
+
+.dialogButtonYes
+{
+	left:250px;
+	top:180px;
+	width:95px;
+	height:35px;
+}
+
+.dialogButtonConfirm
+{
+	left:170px;
+	top:180px;
+	width:95px;
+	height:35px;
+	
+	background-image:url(./image/Confirm.png);
+}
+
+#reconfirm1 > .dialogButtonConfirm
+{
+	left:170px;
+	top:60px;
+	width:95px;
+	height:35px;
+	
+	background-image:url(./image/Confirm.png);
+}
+
+.dialog
+{
+	display:none;
+}
+
+#selectmenu .menu
+{
+	position: absolute;
+	top: 45px;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+#selectmenu .menuButton
+{
+	background-color: #136fff;
+	color: #ffffff;
+	width: 184px;
+	height: 45px;
+	line-height: 45px;
+	display: inline-block;
+	margin: 8px;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18pt;
+	text-shadow: 1px 1px 1px #000;
+}
+
+#selectmenu .menuButton:active
+{
+	background-color: #ffffff !important;
+	color: #136fff;
+	border: 1px solid #136fff;
+}
+
+#selectmenu .button#cancel
+{
+	bottom: 10px;
+	right: 10px;
+	width: 110px;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	text-align: center;
+	font-size: 14pt;
+	font-weight: bold;
+	background-color: #FF4F02;
+	border: 1px solid #FF4F02;
+	border-radius: 5px;
+	text-shadow: 1px 1px 1px #000;
+}
+
+#selectmenu .button#cancel:active
+{
+	background-color: #fff;
+	color: #FF4F02;
+}
+
+#selectmenu div#selectdate
+{
+	position: absolute;
+	font-size: 24px;
+	left: 180px;
+	top: 10px;
+}
+
+#selectmenu div#close
+{
+	position: absolute;
+	font-size: 28px;
+	right: 2px;
+	top: 2px;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	background: #dcdcdc;
+	text-align: center;
+	border-radius: 5px;
+	color: #aaaaaa;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #000;
+	border: 1px solid #dcdcdc !important;
+}
+
+#selectmenu div#close:active
+{
+	background-color: #aaaaaa !important;
+	color: #dcdcdc;
+}
+
+#selectmenu .titleLine
+{
+	width: 380px;
+}
+
+.base1
+{
+	background-color: #136fff !important;
+	border: 1px solid #136fff !important;
+}
+
+#selectmenu .menuButton.base1:active
+{
+	background-color: #ffffff !important;
+	color: #136fff;
+}
+
+.base2
+{
+	background-color: #bb0000 !important;
+	border: 1px solid #bb0000 !important;
+}
+
+#selectmenu .menuButton.base2:active
+{
+	background-color: #ffffff !important;
+	color: #bb0000;
+}

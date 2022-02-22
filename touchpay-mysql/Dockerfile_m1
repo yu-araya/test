@@ -1,0 +1,5 @@
+# for docker-compose. context=touchpay-package directory.
+FROM --platform=linux/x86_64 mysql:5.7.31
+
+# standard_tpay create
+COPY ./touchpay-mysql/my.cnf /etc/mysql/conf.d/

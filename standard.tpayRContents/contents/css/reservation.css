@@ -1,0 +1,261 @@
+/*
+ * 社員食堂精算管理システム
+ * index トップ画面
+ * 非接触ICタイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+body {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+/* ボタン */
+.button {
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+/* ボタン onMouseDownで動作するもの */
+.button_down {
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+.button_down#work {
+	left: 7px;
+	top: 39px;
+	width: 466px;
+	height: 227px;
+	background-color: #ffff99;
+}
+
+.button#left {
+	top: 43px;
+	left: 10px;
+	width: 45px;
+	height: 26px;
+	background-image: url(./image/LeftSArrow.png);
+}
+.button#right {
+	top: 43px;
+	left: 182px;
+	width: 45px;
+	height: 26px;
+	background-image: url(./image/RightSArrow.png);
+}
+.button#back {
+	top: 43px;
+	left: 275px;
+	width: 95px;
+	height: 35px;
+	background-image:url(./image/ButtonBlue.png);
+	line-height: 33px;
+	color: #fff;
+	text-shadow: 1px 2px 3px #000;
+	text-align: center;
+	font-size: 12pt;
+	font-weight: bold;
+}
+.button#save {
+	top: 43px;
+	left: 374px;
+	width: 95px;
+	height: 35px;
+	background-image:url(./image/ButtonGreen.png);
+	line-height: 33px;
+	color: #fff;
+	text-shadow: 1px 2px 3px #000;
+	text-align: center;
+	font-size: 14pt;
+	font-weight: bold;
+}
+.button#up {
+	top: 111px;
+	left: 443px;
+	width: 26px;
+	height: 45px;
+	background-image: url(./image/UpArrow.png);
+}
+.button#up.disabled {
+	background-image: url(./image/UpArrowDisabled.png) !important;
+}
+.button#down {
+	top: 156px;
+	left: 443px;
+	width: 26px;
+	height: 45px;
+	background-image: url(./image/DownArrow.png);
+}
+.button#down.disabled {
+	background-image: url(./image/DownArrowDisabled.png) !important;
+}
+
+/* 表示 */
+.info {
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-size: 16px;
+
+	text-shadow:#444 1px 1px 3px;
+}
+
+.info#emp_info {
+	width: 275px;
+	left: 150px;
+	top: 12px;
+	font-size: 20px;
+	text-shadow: none;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.info#network {
+	left: 440px;
+	top: 3px;
+	width: 32px;
+	height:32px;
+}
+
+p#message {
+	left: 40px;
+	top: 50px;
+}
+
+p.item#mes3 {
+	left: 9px;
+	top: 30px;
+	width: 463px;
+	height: 30px;
+	text-align: center;
+	vertical-align: top;
+	visibility: hidden
+}
+
+.target_date {
+	width: 120px;
+	margin-top: 7px;
+	margin-left: 53px;
+	text-align: center;
+	font-size: 14pt;
+}
+
+table.calendar {
+	border-collapse: collapse;
+	position: absolute;
+	top: 43px;
+	left: 1px;
+	width: 430px;
+}
+table.calendar tr th {
+	height: 20px;
+	border: 1px solid #bdbdbd;
+	background-color: #0000cd;
+	color: #fff;
+}
+table.calendar tr td {
+	width: 63px;
+	height: 54px;
+	border: 1px solid #bdbdbd;
+	background-color: #fff;
+	font-size: 10pt;
+	padding: 0;
+}
+table.calendar tr td.day_off {
+	background: #ffccff !important;
+	color: #f00;
+}
+table.calendar tr td.disabled {
+	background: #e6e6e6 !important;
+}
+table.calendar tr td .date {
+	position: absolute;
+	top: 1px;
+	right: 3px;
+	margin: 0;
+    padding: 0;
+    font-size: 14pt;
+}
+table.calendar tr td .reservation {
+	position: absolute;
+	bottom: 3px;
+	left: 0;
+	right: 0;
+	width: 80%;
+	height: 20px;
+	margin: auto;
+	padding: 0;
+	background-color: #136fff;
+	color: #fff;
+	border-radius: 5px;
+	line-height: 20px;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px #000;
+}
+
+div.date_box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+div.click_area {
+	margin: 0;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+}
+
+div.click_area .comment {
+	display: none;
+	color: #fff;
+	font-size: 10pt;
+	margin: 2px 0 0 3px;
+	position: absolute;
+	padding: 0;
+	border-radius: 10px;
+	width: 20px;
+	height: 20px;
+	line-height: 19px;
+	text-align: center;
+	text-shadow: 1px 1px 0px #000;
+}
+
+td.append {
+	background-color: rgba(50, 255, 50, 0.4) !important;
+}
+
+td.append div.click_area .comment {
+	display: block;
+	background-color: #008000;
+	font-weight: bold;
+	font-size: 9pt;
+	width: 28px;
+}
+
+td.remove {
+	background-color: rgba(255, 153, 51, 0.4) !important;
+}
+
+td.remove div.click_area .comment {
+	display: block;
+	background-color: #FF4F02;
+	font-weight: bold;
+}
+
+.display_none {
+	display: none;
+}

@@ -1,0 +1,82 @@
+/*
+ * 社員食堂精算管理システム
+ * index トップ画面
+ * 非接触ICタイプ用
+ *
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+
+/* ボタン */
+.button {
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+/* ボタン onMouseDownで動作するもの */
+.button_down {
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+.button_down#work {
+	left: 7px;
+	top: 39px;
+	width: 466px;
+	height: 227px;
+	background-color: #ffff99;
+}
+
+/* 表示 */
+p.item {
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-size: 24px;
+
+	text-shadow:#444 1px 1px 3px;
+}
+
+.info {
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-size: 16px;
+
+	text-shadow:#444 1px 1px 3px;
+}
+
+.info#network {
+	left: 440px;
+	top: 3px;
+	width: 32px;
+	height:32px;
+}
+
+p#message {
+	left: 40px;
+	top: 50px;
+}
+
+p.item#mes3 {
+	left: 9px;
+	top: 30px;
+	width: 463px;
+	height: 30px;
+	text-align: center;
+	vertical-align: top;
+	visibility:hidden
+}
+
+div.ticket
+{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	text-align: center;
+	font-size: 84px;
+}

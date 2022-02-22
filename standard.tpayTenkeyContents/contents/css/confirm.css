@@ -1,0 +1,113 @@
+/*
+ * 社員食堂精算管理システム
+ * 確認画面ベース
+ * 
+ * COPYRIGHT (C) 2012 AGILECORE, INC.  ALL RIGHTS RESERVED.
+ * 
+ * @author AGILECORE, INC.
+ * @version 1.0
+ * 
+ * Licensed under the MIT License: http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+
+h1.title,p.message,p#centermessage
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+	font-weight: normal;
+	margin:0px;
+}
+
+h1.title
+{
+	font-size: 24px;left:20px;top:10px;
+}
+
+p.message, p#centermessage
+{
+    font-size:20px;left:40px;top:50px;right:40px
+}
+
+#confirm > p#centermessage		{left:0px;  top:100px;width:440px; height:30px;text-align:center;vertical-align:top;}
+#wait > p#centermessage		{left:0px;  top:100px;width:440px; height:30px;text-align:center;vertical-align:top;}
+#reconfirm1 > p#centermessage		{left:0px;  top:10px;width:440px; height:30px;text-align:center;vertical-align:top;}
+#reconfirm2 > p#centermessage		{left:0px;  top:20px;width:440px; height:30px;text-align:center;vertical-align:top;}
+#requesterr > p#centermessage		{left:0px;  top:20px;width:440px; height:30px;text-align:center;vertical-align:top;}
+#savewait > p#centermessage   {left:0px;  top:100px;width:440px; height:30px;text-align:center;vertical-align:top;}
+#checkerr > p#centermessage		{left:0px;  top:20px;width:440px; height:30px;text-align:center;vertical-align:top;}
+
+.titleLine
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+
+	left:10px;
+	top:36px;
+	width:420px;
+	height:3px;
+	
+	background-image:url(./image/Line.png);
+}
+
+#waitImage
+{
+    -webkit-background-size: 100% 100%;
+    position:absolute;
+
+    left:210px;
+    top:36px;
+    width:32px;
+    height:32px;
+    
+    background-image:url(./image/Wait.gif);
+}
+
+.dialogButtonYes,.dialogButtonNo,.dialogButtonConfirm
+{
+	-webkit-background-size: 100% 100%;
+	position:absolute;
+}
+
+.dialogButtonNo
+{
+	left:100px;
+	top:180px;
+	width:95px;
+	height:35px;
+}
+
+.dialogButtonYes
+{
+	left:250px;
+	top:180px;
+	width:95px;
+	height:35px;
+}
+
+.dialogButtonConfirm
+{
+	left:170px;
+	top:180px;
+	width:95px;
+	height:35px;
+	
+	background-image:url(./image/Confirm.png);
+}
+
+#reconfirm1 > .dialogButtonConfirm
+{
+	left:170px;
+	top:60px;
+	width:95px;
+	height:35px;
+	
+	background-image:url(./image/Confirm.png);
+}
+
+.dialog
+{
+	display:none;
+}
+

@@ -1,0 +1,44 @@
+site_name: 社員TouchPay 操作マニュアル
+theme:
+    name: "material"
+    logo: img/favicon.ico
+    favicon: img/favicon.ico
+    language: "ja"
+    extra:
+        search:
+            language: "ja"
+extra_css:
+    - stylesheets/extra.css
+markdown_extensions:
+    - admonition
+nav:
+    - 機能の紹介: index.md
+    - 管理画面:
+          - システムのログイン: login.md
+          - 予約状況照会(オプション): reservation_info.md
+          - 予約一括登録(オプション): reservation_bulk_registration.md
+          - 社員別食堂精算: food_history_info.md
+          - 食堂精算集計: food_history_info_sumdaily.md
+          - CSVファイル出力: csv.md
+          - 社員情報メンテナンス: employee_info.md
+          - 社員区分マスタメンテナンス: employee_kbn.md
+          # - 送信エラー一覧(オプション): regist_error.md
+          - カレンダーメンテナンス: calendar.md
+          - 食事メンテナンス(オプション): food_division.md
+          - パスワード変更: password.md
+    - 個人向け画面(オプション):
+          - 起動手順・画面説明: user_setting.md
+          - ログイン手順: user_login.md
+          - 予約確認・登録・削除: user_reservation.md
+          - 喫食確認(オプション): user_foodhistory.md
+          - パスワード変更: user_password.md
+    - ピットタッチプロご利用方法:
+          - 電源/ネットワーク設定手順: pittouchpro2_setting.md
+          - 喫食端末使用方法: pittouchpro2_food.md
+          # - 予約端末使用方法: pittouchpro2_reserve.md
+    - タブレット端末の使用方法:
+          - 起動手順・画面説明: tablet_setting.md
+          - 使用方法: tablet_food.md
+    - 厨房向け注文表示機能の使用方法:
+          - 画面説明・使用方法: forkitchen.md
+    - よくあるご質問: qanda.md

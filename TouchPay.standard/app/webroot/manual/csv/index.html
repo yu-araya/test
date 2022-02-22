@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>CSVファイル出力 - 社員TouchPay 操作マニュアル</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#csv" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="社員TouchPay 操作マニュアル" class="md-header-nav__button md-logo" aria-label="社員TouchPay 操作マニュアル">
+      
+  <img src="../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            社員TouchPay 操作マニュアル
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              CSVファイル出力
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="社員TouchPay 操作マニュアル" class="md-nav__button md-logo" aria-label="社員TouchPay 操作マニュアル">
+      
+  <img src="../img/favicon.ico" alt="logo">
+
+    </a>
+    社員TouchPay 操作マニュアル
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      機能の紹介
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      管理画面
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="管理画面" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        管理画面
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../login/" class="md-nav__link">
+      システムのログイン
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reservation_info/" class="md-nav__link">
+      予約状況照会(オプション)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reservation_bulk_registration/" class="md-nav__link">
+      予約一括登録(オプション)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../food_history_info/" class="md-nav__link">
+      社員別食堂精算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../food_history_info_sumdaily/" class="md-nav__link">
+      食堂精算集計
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        CSVファイル出力
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      CSVファイル出力
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#csv_1" class="md-nav__link">
+    CSVメイン画面
+  </a>
+  
+    <nav class="md-nav" aria-label="CSVメイン画面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    社員情報形式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv_2" class="md-nav__link">
+    総務部向けCSVファイル出力
+  </a>
+  
+    <nav class="md-nav" aria-label="総務部向けCSVファイル出力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    月別全体実績状況
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    月別個別予約・実績状況
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../employee_info/" class="md-nav__link">
+      社員情報メンテナンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../employee_kbn/" class="md-nav__link">
+      社員区分マスタメンテナンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../calendar/" class="md-nav__link">
+      カレンダーメンテナンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../food_division/" class="md-nav__link">
+      食事メンテナンス(オプション)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../password/" class="md-nav__link">
+      パスワード変更
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      個人向け画面(オプション)
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="個人向け画面(オプション)" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        個人向け画面(オプション)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user_setting/" class="md-nav__link">
+      起動手順・画面説明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user_login/" class="md-nav__link">
+      ログイン手順
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user_reservation/" class="md-nav__link">
+      予約確認・登録・削除
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user_foodhistory/" class="md-nav__link">
+      喫食確認(オプション)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user_password/" class="md-nav__link">
+      パスワード変更
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      ピットタッチプロご利用方法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="ピットタッチプロご利用方法" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        ピットタッチプロご利用方法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pittouchpro2_setting/" class="md-nav__link">
+      電源/ネットワーク設定手順
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pittouchpro2_food/" class="md-nav__link">
+      喫食端末使用方法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      タブレット端末の使用方法
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="タブレット端末の使用方法" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        タブレット端末の使用方法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tablet_setting/" class="md-nav__link">
+      起動手順・画面説明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tablet_food/" class="md-nav__link">
+      使用方法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../qanda/" class="md-nav__link">
+      よくあるご質問
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#csv_1" class="md-nav__link">
+    CSVメイン画面
+  </a>
+  
+    <nav class="md-nav" aria-label="CSVメイン画面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    社員情報形式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv_2" class="md-nav__link">
+    総務部向けCSVファイル出力
+  </a>
+  
+    <nav class="md-nav" aria-label="総務部向けCSVファイル出力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    月別全体実績状況
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    月別個別予約・実績状況
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="csv">CSVファイル出力</h1>
+<h2 id="csv_1">CSVメイン画面</h2>
+<p>CSVファイルは画面上部から人事部向けと総務部向けの2つから選択できます。
+<img alt="CSVファイル出力メイン人事部向け画面" src="../img/csv/csv_main_jinji.png" /></p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>出力形式をCSVかEXCELかを選択します。出力内容は同じです。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">社員情報形式</h3>
+<p>※画面はEXCEL形式のサンプルです。社員情報一括登録時は本ファイルを利用して、登録用ファイルを作成してください。
+<img alt="社員情報形式サンプル" src="../img/employee_info/employee_info_excel.png" /></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>入力内容</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>社員区分</td>
+<td>数字</td>
+<td><strong>※必須項目</strong> 社員区分です。各番号の社員区分については<a href="../employee_kbn/">社員区分マスタメンテナンス</a>をご確認ください。</td>
+</tr>
+<tr>
+<td>社員コード</td>
+<td>半角文字最大10桁</td>
+<td><strong>※必須項目</strong> 社員コード(社員番号)です。</td>
+</tr>
+<tr>
+<td>氏名</td>
+<td>全半角文字50文字</td>
+<td>社員名です。</td>
+</tr>
+<tr>
+<td>所属</td>
+<td>全半角文字50文字</td>
+<td>対象社員の所属です。フリーフォーマットのため、追加情報なども入力が可能です。</td>
+</tr>
+<tr>
+<td>ICカード番号</td>
+<td>半角英数字</td>
+<td>お使いのMyfair/FelicaカードのIDmです。ICカード番号、ICカード番号2の中ですでに登録されているカードは登録できません。</td>
+</tr>
+<tr>
+<td>有効期間(開始)</td>
+<td>日付</td>
+<td>対象カードの使用開始年月日です。空白の場合は開始日は未指定でご利用頂けます。</td>
+</tr>
+<tr>
+<td>有効期間(終了)</td>
+<td>日付</td>
+<td>対象カードの使用終了年月日です。空白の場合は無期限でご利用頂けます。</td>
+</tr>
+<tr>
+<td>ICカード番号2</td>
+<td>半角英数字</td>
+<td>副カードを登録する場合のMyfair/FelicaカードのIDmです。ICカード番号、ICカード番号2の中ですでに登録されているカードは登録できません。</td>
+</tr>
+<tr>
+<td>有効期間(開始)2</td>
+<td>日付</td>
+<td>副カードの使用開始年月日です。空白の場合は開始日は未指定でご利用頂けます。</td>
+</tr>
+<tr>
+<td>有効期間(終了)2</td>
+<td>日付</td>
+<td>副カードの使用終了年月日です。空白の場合は無期限でご利用頂けます。</td>
+</tr>
+<tr>
+<td>削除フラグ</td>
+<td>数字</td>
+<td>対象社員が削除状態です。<br>・0：有効社員<br>・1：削除済み</td>
+</tr>
+</tbody>
+</table>
+<h2 id="csv_2">総務部向けCSVファイル出力</h2>
+<p><img alt="CSVファイル出力メイン総務部向け画面" src="../img/csv/csv_main_soumu.png" /></p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>月別全体実績状況の集計開始年月日と集計終了年月日を指定します。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>月別全体実績状況の出力対象社員区分を指定します。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>月別個別予約・実績状況の集計開始年月日と集計終了年月日を指定します。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>月別個別予約・実績状況の出力対象事業所を指定します。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>月別個別予約・実績状況の出力対象社員区分を指定します。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">月別全体実績状況</h3>
+<p>月別全体実績状況は、対象月に対して社員別に数量の合計と金額の合計を出力します。
+<img alt="月別全体実績状況形式" src="../img/csv/csv_foodhistory_sum1.png" />〜<img alt="月別全体実績状況形式" src="../img/csv/csv_foodhistory_sum2.png" /></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No</td>
+<td>1から順に振られます。</td>
+</tr>
+<tr>
+<td>社員区分名</td>
+<td>対象社員の社員区分名です。</td>
+</tr>
+<tr>
+<td>社員コード</td>
+<td>対象社員の社員コードです。</td>
+</tr>
+<tr>
+<td>氏名</td>
+<td>対象社員の社員名です。</td>
+</tr>
+<tr>
+<td>メニュー数量計</td>
+<td>対象社員の対象期間中のメニューの数量の合計です。<br> 登録メニュー数のだけ繰り返し表示されます。</td>
+</tr>
+<tr>
+<td>メニュー金額計</td>
+<td>対象社員の対象期間中のメニューの金額の合計です。<br>登録メニュー数のだけ繰り返し表示されます。</td>
+</tr>
+<tr>
+<td>実績数量計</td>
+<td>喫食数のみの数量の合計です。</td>
+</tr>
+<tr>
+<td>実績金額計</td>
+<td>喫食数のみの金額の合計です。※予約時に精算する場合は本項目は0になる場合があります。</td>
+</tr>
+<tr>
+<td>予約数量計</td>
+<td>予約数のみの数量の合計です。</td>
+</tr>
+<tr>
+<td>予約金額計</td>
+<td>予約数のみの金額の合計です。※喫食時に精算する場合は本項目は0になる場合があります。</td>
+</tr>
+<tr>
+<td>総数量計</td>
+<td>喫食・予約数を合わせた数量の合計です。</td>
+</tr>
+<tr>
+<td>総金額計</td>
+<td>喫食・予約数を合わせた金額の合計です。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">月別個別予約・実績状況</h3>
+<p>月別全体実績状況は、対象月に対して社員別に予約・喫食の明細を出力します。
+<img alt="月別全体実績状況形式" src="../img/csv/csv_foodhistory_detail.png" /></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No</td>
+<td>1から順に振られます。</td>
+</tr>
+<tr>
+<td>社員区分名</td>
+<td>対象社員の社員区分名です。</td>
+</tr>
+<tr>
+<td>社員コード</td>
+<td>対象社員の社員コードです。</td>
+</tr>
+<tr>
+<td>氏名</td>
+<td>対象社員の社員名です。</td>
+</tr>
+<tr>
+<td>ICカード番号</td>
+<td>対象社員のICカード番号です。</td>
+</tr>
+<tr>
+<td>食事名</td>
+<td>喫食・予約のメニュー名です。</td>
+</tr>
+<tr>
+<td>備考</td>
+<td>登録した喫食・予約の備考です。</td>
+</tr>
+<tr>
+<td>カード受付時間</td>
+<td>データが登録された日時です。</td>
+</tr>
+<tr>
+<td>状態</td>
+<td>対象のデータが削除されているかどうかです。<br>・空白：有効データ<br>・削除：削除されたデータ</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../food_history_info_sumdaily/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                食堂精算集計
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../employee_info/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                社員情報メンテナンス
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"search.result.more.one": "1 more on this page", "search.config.pipeline": "trimmer, stemmer", "search.result.more.other": "# more on this page", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.term.missing": "Missing", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

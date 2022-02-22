@@ -1,0 +1,1440 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
+ */
+
+* {
+	margin:0;
+	padding:0;
+	font-size: 11pt;
+}
+
+/** General Style Info **/
+body {
+	font-family: "Helvetica Neue",
+		Arial,
+		"Hiragino Kaku Gothic ProN",
+		"Hiragino Sans",
+		Meiryo,
+		sans-serif;
+	margin: 0;
+	background-color: #FBF6EB;
+	border-collapse:collapse;
+	margin:0 auto;
+	table-layout: auto;
+	width: 100vw;
+	text-align: center;
+}
+a {
+	color: #000;
+	text-decoration: underline;
+	font-weight: bold;
+	outline:none;
+}
+a:hover {
+	color: #367889;
+	text-decoration:none !important;
+}
+a img {
+	border:none;
+	outline:none;
+}
+h1, h2, h3, h4 {
+	font-weight: normal;
+	margin-bottom:0.5em;
+}
+h1 {
+	background:0% 0% no-repeat padding-box;
+	color: #bce2e8;
+	font-size: 100%;
+}
+h2 {
+	background:#fff;
+	color: #e32;
+	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
+	font-size: 190%;
+}
+h3 {
+	color: #2c6877;
+	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
+	font-size: 165%;
+}
+h4 {
+	color: #993;
+	font-weight: normal;
+}
+
+/* button */
+input[type=submit], button {
+	display: inline;
+	width: auto;
+}
+
+input[type=submit], button,
+.actions ul li a,
+.actions a {
+	background: #CFB06E 0% 0% no-repeat padding-box;
+	opacity: 1;
+	padding: 10px 10px 10px 10px;
+	margin: 5px 5px 5px 0px;
+	border: none;
+	color: #ffffff;
+	text-shadow: none;
+	border-radius: 4px;
+	border:solid 1px   #CFB06E; 
+
+}
+input[type=submit]:hover, button:hover,
+.actions ul li a:hover,
+.actions a:hover {
+	background: #fff;
+	color: #908549;
+	border:solid 1px  #908549;
+}
+input[type=submit]:active, button:active,
+.actions ul li a:active,
+.actions a:active {
+	background: #fff;
+	color: #908549;
+	border:solid 1px  #908549;
+}
+
+/* text */
+input[type=text], input[type=password]{
+	clear: both;
+	background: none;
+	padding: 1px;
+	vertical-align: text-bottom;
+	border: solid 1px;
+	border-color: #CFB06E;
+	height: 25px;
+	background: #ffffff;
+}
+
+textarea{
+	clear: both;
+	background: none;
+	padding: 1px;
+	vertical-align: text-bottom;
+	border: solid 1px;
+	border-color: #CFB06E;
+	background: #ffffff;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus{
+	outline: 1px #908549 solid;
+}
+
+
+input[type=text]:disabled{
+	background: #FBF6EB;
+}
+
+.food_period_detail input[type=text], input[type=password]{
+	padding: 0px;
+}
+
+/* select */
+select {
+	clear: both;
+	padding: 1px;
+	vertical-align: text-bottom;
+	border: solid 1px;
+	border-color: #CFB06E;
+	border-radius: 4px;
+	height: 25px;
+}
+select[multiple=multiple] {
+	width: 100%;
+}
+
+/* checkbox */
+input[type=checkbox] {
+	clear: left;
+	float: left;
+	margin: 4px 4px 0px 2px;
+	width: auto;
+}
+div.checkbox label {
+	display: inline;
+}
+
+/* Scaffold */
+#container {
+	text-align: left;
+}
+
+/* header */
+#header{
+	height: 5vw;
+	padding: 0px 0px;
+	background: #ffffff;
+	display: flex;
+	-webkit-align-items: center;
+    align-items: center;
+	justify-content: space-between;
+}
+#header h1 {
+	/* height: 59px;
+	top: -1px;
+	line-height:20px;
+	color: #000; */
+	padding: 0px 20px;
+}
+#header h1 a {
+	color: #fff;
+	background: #fafafa;
+	font-weight: normal;
+	text-decoration: none;
+}
+#header h1 a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#content{
+	clear: both;
+	overflow: auto;
+}
+#footer {
+	clear: both;
+	padding: 6px 10px;
+	text-align: right;
+}
+
+.logo-area {
+	padding-left: 1%;
+	text-align: center;
+	display: flex;
+}
+
+.logo-area .nowdate{
+	margin: auto;
+	padding-left: 1em;
+}
+
+.logout-button-area {
+	padding-right: 2%;
+	display: flex;
+}
+
+/** containers **/
+div.form,
+div.index,
+div.view {
+	float:right;
+	width:76%;
+	border-left:1px solid #666;
+	padding:10px 2%;
+}
+div.actions {
+	float:left;
+	width:16%;
+	padding:10px 1.5%;
+}
+div.actions h3 {
+	padding-top:0;
+	color:#777;
+}
+div.header {
+	float:right; 
+	margin:20px 20px 0 0; 
+}
+
+
+/** Tables **/
+table {
+	border-right:0;
+	clear: both;
+	color: #333;
+	width: 100%;
+}
+th {
+	border:0;
+	border-bottom:2px solid #555;
+	text-align: center;
+	padding:4px;
+	background-color: #90CC3D;
+}
+th a {
+	display: block;
+	padding: 2px 4px;
+	text-decoration: none;
+}
+th a.asc:after {
+	content: ' ?';
+}
+th a.desc:after {
+	content: ' ?';
+}
+table tr td {
+	padding: 4px;
+	text-align: left;
+	vertical-align: top;
+	line-height: 22px;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+table tr {
+	background: #f9f9f9;
+}
+
+table tr:nth-child(even) {
+	background: #f9f9f9;
+}
+td.actions {
+	text-align: center;
+	white-space: nowrap;
+}
+table td.actions a {
+	margin: 0 6px;
+	padding:2px 5px;
+}
+table.border0 {
+	border: 0;
+}
+
+/* SQL log */
+.cake-sql-log {
+	background: #fff;
+}
+.cake-sql-log td {
+	padding: 4px 8px;
+	text-align: left;
+	font-family: Monaco, Consolas, "Courier New", monospaced;
+}
+.cake-sql-log caption {
+	color:#fff;
+}
+
+/** Paging **/
+.paging {
+	color: #ccc;
+	clear:both;
+	float: right;
+}
+.paging .current,
+.paging .disabled,
+.paging a {
+	text-decoration: none;
+	padding: 3px 8px;
+	display: inline-block;
+	font-weight: normal;
+	border: 1px none #ccc;
+	font-size: 85%;
+}
+.paging a {
+	text-decoration: underline;
+}
+.paging > span {
+	display: inline-block;
+}
+.paging > span:hover {
+}
+.paging .prev {
+}
+.paging .next {
+}
+.paging .disabled {
+	color: #000;
+}
+.paging .disabled:hover {
+}
+.paging .current {
+	color: #000;
+	border: 1px solid #e0c3cd;
+	font-weight: bold;
+}
+.paging span.current:hover {
+	color: #000;
+}
+
+/** Scaffold View **/
+dl {
+	line-height: 2em;
+	margin: 0em 0em;
+	width: 60%;
+}
+dl dd:nth-child(4n+2),
+dl dt:nth-child(4n+1) {
+	background: #f4f4f4;
+}
+
+dt {
+	font-weight: bold;
+	padding-left: 4px;
+	vertical-align: top;
+	width: 10em;
+}
+dd {
+	margin-left: 10em;
+	margin-top: -2em;
+	vertical-align: top;
+}
+
+/** Forms **/
+form {
+	clear: both;
+	margin-right: 20px;
+	padding: 0;
+	width: 95%;
+}
+fieldset {
+	border: none;
+	margin-bottom: 1em;
+	padding: 16px 10px;
+}
+fieldset legend {
+	color: #e32;
+	font-size: 160%;
+	font-weight: bold;
+}
+fieldset fieldset {
+	margin-top: 0;
+	padding: 10px 0 0;
+}
+fieldset fieldset legend {
+	font-size: 120%;
+	font-weight: normal;
+}
+fieldset fieldset div {
+	clear: left;
+	margin: 0 20px;
+}
+form div {
+	clear: both;
+	margin: 5px 5px 5px 0px;
+}
+form .input {
+	color: #444;
+	font-weight: bold;
+}
+
+form .required label:after {
+	color: #e32;
+	content: '*';
+	display:inline;
+}
+form div.submit {
+	clear: both;
+	margin-top: 10px;
+}
+label {
+	display: inline;
+	font-weight: bold;
+}
+option {
+}
+
+input[type=radio] {
+	float:left;
+	width:auto;
+	margin: 6px 0;
+	padding: 0;
+	line-height: 26px;
+}
+.radio label {
+	margin: 0 0 6px 20px;
+	line-height: 26px;
+}
+
+
+/* Form errors */
+form .error {
+	background: #FFDACC;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	font-weight: normal;
+}
+form .error-message {
+	-moz-border-radius: none;
+	-webkit-border-radius: none;
+	border-radius: none;
+	border: none;
+	background: none;
+	margin: 0;
+	padding-left: 4px;
+	padding-right: 0;
+}
+form .error,
+form .error-message {
+	color: #9E2424;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+/** Notices and Errors **/
+.message {
+	clear: both;
+	font-weight: bold;
+}
+
+.success,
+.message,
+.cake-error,
+.cake-debug,
+.notice,
+p.error,
+.error-message {
+}
+.success,
+.message,
+.cake-error,
+p.error,
+.error-message {
+	clear: both;
+	color: #dd0000;
+	font-weight: bold;
+	padding: 7px 0 20px 0;
+}
+/*　処理は無事に完了しました　のデザイン*/
+.success {
+	clear: both;
+	color: #0000ee;
+	font-weight: bold;
+	padding: 7px 0 20px 0;
+}
+p.error {
+	font-family: Monaco, Consolas, Courier, monospace;
+	padding: 0.8em;
+	margin: 1em 0;
+}
+p.error em {
+	font-weight: normal;
+	line-height: 140%;
+}
+.notice {
+	color: #000;
+	display: block;
+	padding: 0.8em;
+	margin: 1em 0;
+}
+
+/**  Actions  **/
+.actions ul {
+	margin: 0;
+	padding: 0;
+}
+.actions li {
+	margin:0 0 0.5em 0;
+	list-style-type: none;
+	white-space: nowrap;
+	padding: 0;
+}
+.actions ul li a {
+	font-weight: normal;
+	display: block;
+	clear: both;
+}
+
+/** Related **/
+.related {
+	clear: both;
+	display: block;
+}
+
+/** Debugging **/
+pre {
+	color: #000;
+	background: #f0f0f0;
+	padding: 15px;
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.cake-debug-output {
+	padding: 0;
+	position: relative;
+}
+.cake-debug-output > span {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: rgba(255, 255, 255, 0.3);
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 5px 6px;
+	color: #000;
+	display: block;
+	float: left;
+	-moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+.cake-debug,
+.cake-error {
+	line-height: 20px;
+	clear: both;
+}
+.cake-error > a {
+	text-shadow: none;
+}
+.cake-error {
+	white-space: normal;
+}
+.cake-stack-trace {
+	background: rgba(255, 255, 255, 0.7);
+	color: #333;
+	margin: 10px 0 5px 0;
+	padding: 10px 10px 0 10px;
+	line-height: 140%;
+	overflow: auto;
+	position: relative;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+.cake-stack-trace a {
+	text-shadow: none;
+	background: rgba(255, 255, 255, 0.7);
+	padding: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 0 4px 10px 2px;
+	font-family: sans-serif;
+	line-height: 14px;
+	display: inline-block;
+	text-decoration: none;
+	-moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+.cake-code-dump pre {
+	position: relative;
+	overflow: auto;
+}
+.cake-context {
+	margin-bottom: 10px;
+}
+.cake-stack-trace pre {
+	color: #000;
+	background-color: #F0F0F0;
+	margin: 0 0 10px 0;
+	padding: 1em;
+	overflow: auto;
+	text-shadow: none;
+}
+.cake-stack-trace li {
+	padding: 10px 5px 0;
+	margin: 0 0 4px 0;
+	font-family: monospace;
+	border: 1px solid #bbb;
+	-moz-border-radius: 4px;
+	-wekbkit-border-radius: 4px;
+	border-radius: 4px;
+	background: #dcdcdc;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#dcdcdc));
+	background-image: -webkit-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -moz-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -ms-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: -o-linear-gradient(top, #fefefe, #dcdcdc);
+	background-image: linear-gradient(top, #fefefe, #dcdcdc);
+}
+/* excerpt */
+.cake-code-dump pre,
+.cake-code-dump pre code {
+	clear: both;
+	line-height: 15px;
+	margin: 4px 2px;
+	padding: 4px;
+	overflow: auto;
+}
+.cake-code-dump .code-highlight {
+	display: block;
+	background-color: rgba(255, 255, 0, 0.5);
+}
+.code-coverage-results div.code-line {
+	padding-left:5px;
+	display:block;
+	margin-left:10px;
+}
+.code-coverage-results div.uncovered span.content {
+	background:#ecc;
+}
+.code-coverage-results div.covered span.content {
+	background:#cec;
+}
+.code-coverage-results div.ignored span.content {
+	color:#aaa;
+}
+.code-coverage-results span.line-num {
+	color:#666;
+	display:block;
+	float:left;
+	width:20px;
+	text-align:right;
+	margin-right:5px;
+}
+.code-coverage-results span.line-num strong {
+	color:#666;
+}
+.code-coverage-results div.start {
+	border:1px solid #aaa;
+	border-width:1px 1px 0 1px;
+	margin-top:30px;
+	padding-top:5px;
+}
+.code-coverage-results div.end {
+	border:1px solid #aaa;
+	border-width:0px 1px 1px 1px;
+	margin-bottom:30px;
+	padding-bottom:5px;
+}
+.code-coverage-results div.realstart {
+	margin-top:0px;
+}
+.code-coverage-results p.note {
+	color:#bbb;
+	padding:5px;
+	margin:5px 0 10px;
+}
+.code-coverage-results span.result-bad {
+	color: #a00;
+}
+.code-coverage-results span.result-ok {
+	color: #fa0;
+}
+.code-coverage-results span.result-good {
+	color: #0a0;
+}
+
+/** Elements **/
+#url-rewriting-warning {
+	display:none;
+}
+
+
+table{
+	border-collapse:collapse;
+	table-layout: auto;
+	width: 75vw;
+	text-align: left;
+	font-size: 4rem;
+	border-width: 1px;
+	border: 1;
+	border-color: #dcdcdc;
+}
+td,th{
+	padding:10px;
+	border-width: 1px;
+	border-color: #dcdcdc;
+}
+th{
+	color:#fff;
+	background:#CFB06E;
+	width: auto;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #dcdcdc;
+}
+
+.container {
+	margin: 0px auto;
+	max-width: 960px;
+}
+.header {}
+.wrapper {
+	width: 100%;
+	float: left;
+	margin: 0px -300px 0px 0px;
+}
+.content {
+	margin-right: 310px;
+}
+.sidebar {
+	width: 300px;
+	float: right;
+	margin-left: -300px;
+}
+.footer {
+	clear: both;
+}
+@media (max-width: 720px) {
+  .wrapper, .content, .sidebar {
+	float: none;
+	margin: 0px;
+	width: auto;
+  }
+}
+
+.footer {
+	clear: both;
+}
+
+
+@media (max-width: 720px) {
+  .wrapper, .content, .sidebar {
+	float: none;
+	margin: 0px;
+	width: auto;
+  }
+}
+
+.ui-widget.ui-widget-content.ui-autocomplete {
+	max-height: 136px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ui-menu .ui-menu-item {
+	padding: 0 !important;
+	margin: 0 !important;
+	font-family: monospace,"MS PGothic","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,Sans-Serif;
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+	padding: 6px !important;
+	text-align: left;
+}
+
+
+/** Webサイト共通オブジェクト用CSS **/
+
+/* カレンダー 基本 */
+.calendar {
+	width: auto;
+	margin: 0;
+	border-collapse: separate;
+}
+
+.calendar th{
+	border-style: none;
+}
+.calendar tr td {
+	width: 88px;
+	height: 53px;
+	background: #fff;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0;
+}
+.calendar tr td.today {
+	background-color: #ff9 !important;
+}
+.calendar tr td span.date {
+	position: absolute;
+	top: 2px;
+	right: 8px;
+	font-size: 11pt;
+}
+.calendar tr td .count {
+	position: absolute;
+	bottom: 3px;
+	right: 55px;
+	font-size: 14pt;
+	font-weight: bold;
+}
+.calendar tr td .decision {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	margin: 0;
+	background-color: #f00;
+	color: #fff;
+	font-size: 10pt;
+	border-radius: 3px;
+	padding: 0 2px;
+}
+
+/* 詳細テーブル統一 */
+table.detail-table{
+	border: none;
+	border-collapse: separate;
+	width: 70vw;
+}
+
+table.detail-table th{
+	border: none;
+}
+
+table.detail-table tr td:nth-child(1){
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.detail-table tr td{
+	/* border-bottom: solid 1px; */
+	background: #ffffff;
+	vertical-align: middle;
+	text-align: center;
+}
+
+table.detail-table tr td.employee_id{
+	text-align: center;
+	vertical-align: middle;
+	width: 10%;
+}
+
+table.detail-table tr td.instrument_division{
+	text-align: center;
+}
+
+table.detail-table tr td.employee_name{
+	text-align: left;
+}
+
+table.detail-table tr td.employee_kbn{
+	text-align: left;
+}
+
+table.detail-table tr td.food_division{
+	text-align: left;
+}
+
+table.detail-table tr td.date{
+	text-align: left;
+}
+
+table.detail-table tr td.reason{
+	text-align: left;
+}
+
+table.detail-table tr td.reason input[type=text]{
+	width: 90%;
+	margin-left: 5px;
+}
+
+table.detail-table tr td.update{
+	text-align: left;
+}
+
+table.detail-table tr td.delete{
+	text-align: left;
+}
+
+table.detail-table tr td.submit{
+	text-align: center;
+}
+
+table.detail-table tr td.function{
+	text-align: center;
+}
+
+table.detail-table tr td.number{
+	text-align: right;
+}
+
+table.detail-table tr.delete td{
+	background-color: #ADADAD;
+}
+
+/*社員コード 検索機能*/
+.employee-search {
+	display: none;
+	position: absolute;
+	background: #FBF6EB;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+	border-radius: 3px;
+	z-index: 99;
+	padding: 5px 10px 10px 10px;
+}
+
+.input_reason, .search-employee-id-input, .searched-employee-id-input[type=text]{
+	width: 220px;
+}
+
+.readonly_input[type=text] {
+	border: none;
+}
+
+.employee-id-search-button{
+	height: 25px;
+	vertical-align: center;
+	padding: 0px 10px 0px 10px;
+}
+
+.position_relative{
+	position: relative;
+}
+
+#menu_container
+{
+	position: absolute;
+	margin: 0 0 0 0px;
+	width:95%;
+}
+#menu_container dl
+{
+	margin: 0 0 0 0px;
+	float:right;
+	width:auto;
+}
+#menu_container dt
+{
+}
+#menu_container dd
+{
+	width: 100%;
+	display: none;
+	margin: 0;
+}
+#menu_container dl:hover dd
+{
+	display: block;
+}
+/*  サイドメニューのリンク文字の設定  */
+#menu_container a
+{
+	color:black;
+	font-weight:normal;
+	font-family: 'ヒラギノ角ゴ Pro W3',"frutiger linotype", "lucida grande", "verdana", sans-serif;
+	text-align : left ;
+	display: block;
+	min-width: 90px;
+	line-height: 100%;
+	background: #FFF5EE;
+	padding: 3px;
+	text-decoration: none;
+}
+#menu_container a:hover
+{
+	background-color: #ADE8E6;
+}
+
+.container {
+	width: 1190px;
+}
+
+
+.main_category{
+	width: 80vw;;
+	position:absolute;
+	left:18vw;
+    padding-bottom: 50px;
+}
+
+/* サイドメニュー */
+#main_menu{
+	width:162px;
+	padding: 10px 0px 8px 12px;
+	position:absolute;
+	background: #CFB06E;
+}
+#nav4, #nav4 * {
+	/* font:bold 100% Verdana,sans-serif; */
+	margin:0;
+	padding:0;
+}
+#nav4 {
+	background-color:#CFB06E;
+/*	margin:1em 0;*/
+}
+#nav4 li {
+	display:inline;
+
+}
+#nav4 a {	/* 通常時 */
+	/* width:10vw; */
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 10px;
+	padding-right: 0px;
+
+	color:#fff;
+	text-decoration:none;
+	background-color:#CFB06E;
+	font-weight:100;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+/* マウスが乗った時,カレント時 */
+#nav4 a:hover,
+#nav4 a.tateCurrent {
+	color:#908549;
+	text-decoration:none;
+	background:#fff;
+	/* border-color: #696969; */
+}
+/* 縦型 */
+#nav4 a.tate,
+#nav4 a.tate:hover,
+#nav4 a.tateCurrent,
+#nav4 a.tateCurrent:hover {
+	display:block;
+}
+
+/** 入力部の構造 **/
+.input-table table tr {
+	/* padding: 0; */
+	border: none;
+	background: none;
+}
+.input-table table tr td {
+	/* padding: 0; */
+	border: none;
+	vertical-align: middle;
+	padding: 3px 0px 3px 0px;
+}
+.input-table table tr td:nth-child(1) {
+	width: 160px;
+}
+
+.input-table input[type=text], input[type=password]{
+	width: 220px;
+}
+
+/** 検索条件表示部の構造 **/
+.search-condition-area table tr {
+	/* padding: 0; */
+	border: none;
+	background: none;
+}
+.search-condition-area table tr td {
+	/* padding: 0; */
+	border: none;
+	vertical-align: middle;
+	padding: 3px 0px 3px 0px;
+}
+.search-condition-area table tr td:nth-child(1) {
+	width: 6em;
+}
+
+/** 詳細画面等 submitボタンの並び・大きさ **/
+.detail-submit-area{
+	display: flex;
+}
+
+.detail-submit-area input[type=submit]{
+	margin: 0px 30px 0px 0px;
+	width: 160px;
+}
+
+img {
+	width:auto;
+	height:auto;
+	max-width: initial;
+}
+
+/** パンくずリスト **/
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#breadcrumbs {
+	margin: 0;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+	list-style: none;
+  }
+
+#breadcrumbs li {
+	display: inline;
+	list-style: none;
+}
+
+#breadcrumbs li:after {/* >を表示*/
+	content: '>';
+	padding: 0 0.2em;
+	color: #555;
+}
+
+#breadcrumbs li:last-child:after {
+	content: '';
+}
+
+#breadcrumbs li a {
+	text-decoration: none;
+	color: #ffffff;
+	background: #78A2F0;
+	border-radius: 4px;
+	padding: 10px 10px 10px 10px;
+	font-weight: lighter;
+}
+
+#breadcrumbs li a:hover {
+	text-decoration: underline;
+}
+
+.process_box {
+	position: relative;
+	margin-top: 30px;
+	padding: 20px 15px 15px 15px;
+	background: #fff;
+	border: none;
+	box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+}
+
+.process_box span.title {
+	position: absolute;
+	top: -15px;
+	padding: 5px 10px;
+	background: #78A2F0;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.process_box .comment {
+	padding-bottom: 10px;
+}
+
+.day_off {
+	background: #ffeeff !important;
+}
+
+.table_comment {
+	clear: both;
+	margin: 5px;
+}
+
+.bulk {
+	width: 500px;
+	margin-top: 40px;
+}
+
+
+div.date_box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.width_20 {width: 20px;}
+.width_30 {width: 30px;}
+.width_40 {width: 40px;}
+.width_50 {width: 50px;}
+.width_60 {width: 60px;}
+.width_70 {width: 70px;}
+.width_80 {width: 80px;}
+.width_90 {width: 90px;}
+.width_100 {width: 100px;}
+.width_110 {width: 110px;}
+.width_120 {width: 120px;}
+.width_130 {width: 130px;}
+.width_140 {width: 140px;}
+.width_150 {width: 150px;}
+
+div.decision {
+	position: relative;
+}
+
+div.decision div {
+	background-color: #f00;
+	color: #fff;
+	padding: 2px;
+	width: 100px;
+	text-align: center;
+	font-weight: bold;
+	position: absolute;
+	bottom: 4px;
+	left: 220px;
+}
+
+.display_none {
+	display: none;
+}
+
+.radio label {
+	margin: 0 0 6px 5px;
+	padding-right: 20px;
+	font-size: 12pt;
+}
+
+.food_radio:checked + label {
+}
+
+
+.no-data{
+	text-align: center;
+	width: 40vw;
+	height: 5vw;
+	font-weight: bold;
+}
+
+/* 画面固有CSS */
+
+/** ログイン **/
+.login-info-area{
+	padding: 20px;
+}
+
+/** 予約状況照会 index **/
+.menu_upload {
+	width: 31vw;
+}
+/** 予約状況照会 detail **/
+.reservation_add {
+	width: 38vw;
+}
+.reservation_add input[type=submit] {
+	width: 90px;
+}
+
+/* .add-new-reservation-area input[type="text"]{
+	width: 220px;
+} */
+
+
+/* 予約一括登録 */
+.bulk-insert-area {
+    display: flex;
+}
+
+.bulk-insert-area .bulk {
+    height: 120px;
+}
+
+.bulk-insert-area .food-division {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.bulk-insert-area .food-division table {
+    table-layout: fixed;
+    width: 25vw;
+}
+
+.bulk-insert-area .food-division table tr th:nth-child(1) {
+    width: 50px;
+}
+
+.next_week_reservation_span {
+    font-weight: bold;
+}
+
+table.reservation-next-week-table{
+	table-layout: fixed;
+	width: 55vw;
+}
+
+/** 社員別食堂精算 詳細**/
+.food-history-info-detail-area{
+	width: 70vw;
+}
+.food-history-infos-sum-area {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+/** 食堂精算集計 **/
+table.sum-daily-table{
+	width: auto;
+}
+
+table.sum-daily-table .food-count{
+	width: 110px;
+}
+
+table.sum-daily-table .subtotal{
+	width: 110px;
+}
+
+table.sum-daily-table tr.total td{
+	background: #CFB06E;
+	color: #ffffff;
+	width: 110px;
+}
+
+/** CSV出力 **/
+.csv-export-submit-button[type=submit]{
+	width: 130px;
+}
+
+.employee_info_download {
+    display: flex;
+}
+
+div.date_term {
+	display: inline-block;
+	margin: 0;
+}
+
+div.date_term > div.input {
+	display: inline-block;
+}
+
+.csv_box {
+	position: relative;
+	width: 30vw;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	padding: 20px 15px 15px 15px;
+	box-shadow: 1px 1px 1px  rgba(0, 0, 0, 0.3);
+}
+
+.csv_box span {
+	position: absolute;
+	top: -10px;
+	padding: 0 10px;
+	background: #dcdcdc;
+}
+
+.csv_box label {
+	font-weight: normal;
+	vertical-align: top;
+	margin-right: 20px;
+	line-height: 22px;
+}
+
+.csv_box div.condition {
+	margin-bottom: 15px;
+}
+
+.csv_box table{
+	table-layout: flex;
+	width: 100%;
+}
+
+.csv_box input[type="text"]{
+	width: auto;
+}
+
+/** 社員情報メンテナンス **/
+.memo_comment {
+	position: absolute;
+	margin-top: 10px;
+}
+
+table.employee-list-table{
+	width: 40vw;
+}
+
+/** 社員区分マスタメンテナンス **/
+table.employee-kbn-list-table{
+	width: 40vw;
+}
+
+/** カレンダーメンテナンス **/
+table.day-off-calendar tr td a {
+	font-size: 18pt;
+	text-decoration: none !important;
+}
+.day_off a,
+.day_off span {
+	color: #ff0000;
+}
+
+.day_off a:hover {
+    color: #367889;
+}
+
+.color_red {
+	color: #ff0000;
+}
